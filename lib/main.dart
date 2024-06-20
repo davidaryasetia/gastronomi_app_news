@@ -22,10 +22,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Gastronomy Pulau Lombokjj',
+      title: 'Gastronomy Pulau Lombok',
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => const LoadingScreen()),
+        GetPage(name: '/', page: () => const HomePage()),
         GetPage(name: '/second', page: () => const GastrobotPage()),
       ],
     );

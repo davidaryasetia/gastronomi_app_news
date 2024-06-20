@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 20,
             ),
-            const Text("Hi there!")
+            const Text("Hi therewww!")
                 .orelega50s()
                 .white()
                 .animate()
@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 10,
             ),
-            const Text("Have we meet Before ?")
+            const Text("Have we meet Before okok?")
                 .orelega25s()
                 .white()
                 .animate()
@@ -108,9 +108,12 @@ class _LoginPageState extends State<LoginPage> {
                   errorText: _validateEmail ? null : 'Email Can\'t Be Empty',
                   hintStyle: TextStyle(fontSize: 15, color: Colors.white),
                   counterText: '0 characters',
-                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 3)),
-                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 3)),
-                  disabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 3)),
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 3)),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 3)),
+                  disabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 3)),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white, width: 3),
                   ),
@@ -146,12 +149,16 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.white,
                       )),
                   hintText: 'Password',
-                  errorText: _validatePassword ? null : 'Password Can\'t Be Empty',
+                  errorText:
+                      _validatePassword ? null : 'Password Can\'t Be Empty',
                   hintStyle: TextStyle(fontSize: 15, color: Colors.white),
                   counterText: '0 characters',
-                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 3)),
-                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 3)),
-                  disabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 3)),
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 3)),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 3)),
+                  disabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 3)),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white, width: 3),
                   ),
@@ -168,7 +175,8 @@ class _LoginPageState extends State<LoginPage> {
                 textSize: 20,
                 ontap: () {
                   bool isEmail = c.isEmail(emailController.text);
-                  if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+                  if (emailController.text.isNotEmpty &&
+                      passwordController.text.isNotEmpty) {
                     if (isEmail) {
                       // print(emailController.text);
                       // print(passwordController.text);
@@ -215,14 +223,18 @@ class _LoginPageState extends State<LoginPage> {
                   Expanded(
                     flex: 1,
                     child: Container(
-                      decoration: const BoxDecoration(border: Border(top: BorderSide(color: Colors.white, width: 1))),
+                      decoration: const BoxDecoration(
+                          border: Border(
+                              top: BorderSide(color: Colors.white, width: 1))),
                     ),
                   ),
                   const Text("OR").nunito20s().white(),
                   Expanded(
                     flex: 1,
                     child: Container(
-                      decoration: const BoxDecoration(border: Border(top: BorderSide(color: Colors.white, width: 1))),
+                      decoration: const BoxDecoration(
+                          border: Border(
+                              top: BorderSide(color: Colors.white, width: 1))),
                     ),
                   ),
                 ],

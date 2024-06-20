@@ -9,7 +9,14 @@ class GlobalController extends GetxController {
 
   final isLogin = false.obs;
   final url = "http://gapulo.tech/api";
-  var tapbar = ['Home', 'Gastronomy', 'Restaurant', 'Culture', 'Reference Village', 'About'];
+  var tapbar = [
+    'Home',
+    'Gastronomy',
+    'Restaurant',
+    'Culture',
+    'Reference Village',
+    'About'
+  ];
 
   final box = GetStorage();
   final token = ''.obs;
@@ -45,7 +52,8 @@ class GlobalController extends GetxController {
   }
 
   bool isEmail(String em) {
-    String p = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    String p =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regExp = RegExp(p);
     return regExp.hasMatch(em);
   }

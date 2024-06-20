@@ -34,7 +34,19 @@ class _GastronomyPageState extends State<GastronomyPage> {
     return Scaffold(
         appBar: const CustomAppbar(),
         body: Stack(children: [
-          ListView(children: const [GastroBodyOne(), Divider(), GastroBodyTwo(), Divider(), GastroBodyThree(), Divider(), GastroBodyFour(), Divider(), GastroBodyFive(), Divider(), FootBar()]),
+          ListView(children: const [
+            GastroBodyOne(),
+            Divider(),
+            GastroBodyTwo(),
+            Divider(),
+            GastroBodyThree(),
+            Divider(),
+            GastroBodyFour(),
+            Divider(),
+            GastroBodyFive(),
+            Divider(),
+            FootBar()
+          ]),
           CustomChatbot(),
         ])
         // HomeBody(),

@@ -47,19 +47,31 @@ class HomeBodyOne extends StatelessWidget {
                                 child: RichText(
                                   text: TextSpan(
                                     text: 'Art ',
-                                    style: GoogleFonts.orelegaOne(fontSize: 25, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                    style: GoogleFonts.orelegaOne(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.w400,
+                                        color: OPrimaryColor),
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: 'Behind The Food is',
-                                        style: GoogleFonts.orelegaOne(fontSize: 25, fontWeight: FontWeight.w400, color: Color(0xff050B16)),
+                                        style: GoogleFonts.orelegaOne(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xff050B16)),
                                       ),
                                       TextSpan(
                                         text: ' Rarely ',
-                                        style: GoogleFonts.orelegaOne(fontSize: 25, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                        style: GoogleFonts.orelegaOne(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w400,
+                                            color: OPrimaryColor),
                                       ),
                                       TextSpan(
                                         text: 'Known',
-                                        style: GoogleFonts.orelegaOne(fontSize: 25, fontWeight: FontWeight.w400, color: Color(0xff050B16)),
+                                        style: GoogleFonts.orelegaOne(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xff050B16)),
                                       ),
                                     ],
                                   ),
@@ -68,7 +80,8 @@ class HomeBodyOne extends StatelessWidget {
                               Container(
                                 width: 400,
                                 height: 150,
-                                child: const Text("Food Gastronomy is the science that deals with all aspects of food. Starting from history, origins, how to cook until the food is ready to be served.")
+                                child: const Text(
+                                        "Food Gastronomy is the science that deals with all aspects of food. Starting from history, origins, how to cook until the food is ready to be served.")
                                     .nunito15b()
                                     .black()
                                     .animate()
@@ -106,35 +119,43 @@ class HomeBodyOne extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 50),
-                    Wrap(alignment: WrapAlignment.center, crossAxisAlignment: WrapCrossAlignment.center, runAlignment: WrapAlignment.center, runSpacing: 20, children: [
-                      ItemInFirstPage(
-                        description: 'Contains a list of foods and food backgrounds',
-                        icon: 'assets/images/ic_recipe.png',
-                        title: 'Gastronomy',
-                        ontap: () {
-                          c.selectedIndex.value = 1;
-                          Get.to(const GastronomyPage());
-                        },
-                      ),
-                      SizedBox(height: 20),
-                      ItemInFirstPage(
-                        description: 'Contains a list of cultures from the island of Lombok',
-                        title: 'Culture',
-                        icon: 'assets/images/ic_culture.png',
-                        ontap: () async {
-                          c.selectedIndex.value = 1;
-                          if (c.selectedIndex.value == 1) {
-                            Get.to(const GastronomyPage());
-                          }
-                        },
-                      ),
-                      SizedBox(height: 20),
-                      const ItemInFirstPage(
-                        description: 'Contains information about the referral village',
-                        title: 'Village',
-                        icon: 'assets/images/ic_village.png',
-                      ),
-                    ]),
+                    Wrap(
+                        alignment: WrapAlignment.center,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        runAlignment: WrapAlignment.center,
+                        runSpacing: 20,
+                        children: [
+                          ItemInFirstPage(
+                            description:
+                                'Contains a list of foods and food backgrounds',
+                            icon: 'assets/images/ic_recipe.png',
+                            title: 'Gastronomy',
+                            ontap: () {
+                              c.selectedIndex.value = 1;
+                              Get.to(const GastronomyPage());
+                            },
+                          ),
+                          SizedBox(height: 20),
+                          ItemInFirstPage(
+                            description:
+                                'Contains a list of cultures from the island of Lombok',
+                            title: 'Culture',
+                            icon: 'assets/images/ic_culture.png',
+                            ontap: () async {
+                              c.selectedIndex.value = 1;
+                              if (c.selectedIndex.value == 1) {
+                                Get.to(const GastronomyPage());
+                              }
+                            },
+                          ),
+                          SizedBox(height: 20),
+                          const ItemInFirstPage(
+                            description:
+                                'Contains information about the referral village',
+                            title: 'Village',
+                            icon: 'assets/images/ic_village.png',
+                          ),
+                        ]),
                   ],
                 ))
             : Padding(
@@ -152,19 +173,31 @@ class HomeBodyOne extends StatelessWidget {
                             child: RichText(
                               text: TextSpan(
                                 text: 'Art ',
-                                style: GoogleFonts.orelegaOne(fontSize: 75, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                style: GoogleFonts.orelegaOne(
+                                    fontSize: 75,
+                                    fontWeight: FontWeight.w400,
+                                    color: OPrimaryColor),
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'Behind The Food is',
-                                    style: GoogleFonts.orelegaOne(fontSize: 75, fontWeight: FontWeight.w400, color: Color(0xff050B16)),
+                                    style: GoogleFonts.orelegaOne(
+                                        fontSize: 75,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xff050B16)),
                                   ),
                                   TextSpan(
                                     text: ' Rarely ',
-                                    style: GoogleFonts.orelegaOne(fontSize: 75, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                    style: GoogleFonts.orelegaOne(
+                                        fontSize: 75,
+                                        fontWeight: FontWeight.w400,
+                                        color: OPrimaryColor),
                                   ),
                                   TextSpan(
                                     text: 'Known',
-                                    style: GoogleFonts.orelegaOne(fontSize: 75, fontWeight: FontWeight.w400, color: Color(0xff050B16)),
+                                    style: GoogleFonts.orelegaOne(
+                                        fontSize: 75,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xff050B16)),
                                   ),
                                 ],
                               ),
@@ -174,7 +207,8 @@ class HomeBodyOne extends StatelessWidget {
                           Container(
                             width: Get.width * 0.265,
                             height: Get.height * 0.14,
-                            child: const Text("Food Gastronomy is the science that deals with all aspects of food. Starting from history, origins, how to cook until the food is ready to be served")
+                            child: const Text(
+                                    "Food Gastronomy is the science that deals with all aspects of food. Starting from history, origins, how to cook until the food is ready to be served")
                                 .nunito20m()
                                 .black()
                                 .animate()
@@ -200,38 +234,46 @@ class HomeBodyOne extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Expanded(flex: 2, child: Image.asset("assets/images/ic_penari.png")),
+                    Expanded(
+                        flex: 2,
+                        child: Image.asset("assets/images/ic_penari.png")),
                     Expanded(
                       flex: 1,
                       child: Container(
-                        child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: [
-                          ItemInFirstPage(
-                            description: 'Contains a list of foods and food backgrounds',
-                            icon: 'assets/images/ic_recipe.png',
-                            title: 'Gastronomy',
-                            ontap: () {
-                              // Get.to(const GastronomyPage());
-                            },
-                            ma: MainAxisAlignment.start,
-                            ca: CrossAxisAlignment.start,
-                          ),
-                          SizedBox(height: Get.height * 0.08),
-                          const ItemInFirstPage(
-                            description: 'Contains a list of cultures from the island of Lombok',
-                            title: 'Culture',
-                            icon: 'assets/images/ic_culture.png',
-                            ma: MainAxisAlignment.start,
-                            ca: CrossAxisAlignment.start,
-                          ),
-                          SizedBox(height: Get.height * 0.08),
-                          const ItemInFirstPage(
-                            description: 'Contains information about the referral village',
-                            title: 'Village',
-                            icon: 'assets/images/ic_village.png',
-                            ma: MainAxisAlignment.start,
-                            ca: CrossAxisAlignment.start,
-                          ),
-                        ]),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              ItemInFirstPage(
+                                description:
+                                    'Contains a list of foods and food backgrounds',
+                                icon: 'assets/images/ic_recipe.png',
+                                title: 'Gastronomy',
+                                ontap: () {
+                                  // Get.to(const GastronomyPage());
+                                },
+                                ma: MainAxisAlignment.start,
+                                ca: CrossAxisAlignment.start,
+                              ),
+                              SizedBox(height: Get.height * 0.08),
+                              const ItemInFirstPage(
+                                description:
+                                    'Contains a list of cultures from the island of Lombok',
+                                title: 'Culture',
+                                icon: 'assets/images/ic_culture.png',
+                                ma: MainAxisAlignment.start,
+                                ca: CrossAxisAlignment.start,
+                              ),
+                              SizedBox(height: Get.height * 0.08),
+                              const ItemInFirstPage(
+                                description:
+                                    'Contains information about the referral village',
+                                title: 'Village',
+                                icon: 'assets/images/ic_village.png',
+                                ma: MainAxisAlignment.start,
+                                ca: CrossAxisAlignment.start,
+                              ),
+                            ]),
                       ),
                     )
                   ],
@@ -266,8 +308,10 @@ class ItemInFirstPage extends StatelessWidget {
       onTap: ontap,
       child: OnHoverButton(
         child: Row(
-          crossAxisAlignment: (ca == null) ? CrossAxisAlignment.start : CrossAxisAlignment.end,
-          mainAxisAlignment: (ma == null) ? MainAxisAlignment.start : MainAxisAlignment.end,
+          crossAxisAlignment:
+              (ca == null) ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+          mainAxisAlignment:
+              (ma == null) ? MainAxisAlignment.start : MainAxisAlignment.end,
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -275,7 +319,9 @@ class ItemInFirstPage extends StatelessWidget {
                 Container(
                   width: 50,
                   height: 50,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(100)), border: Border.all(color: Colors.black)),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(100)),
+                      border: Border.all(color: Colors.black)),
                   child: Image.asset(icon),
                 ),
                 const SizedBox(width: 20),

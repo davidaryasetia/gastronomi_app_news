@@ -25,16 +25,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var c = Get.put(GlobalController());
-  double rate = 0;
+  // var c = Get.put(GlobalController());
+  // double rate = 0;
 
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance.scheduleFrameCallback((timeStamp) async {
-      c.selectedIndex.value = 0;
-      print(c.selectedIndex.value);
-    });
+    // SchedulerBinding.instance.scheduleFrameCallback((timeStamp) async {
+    //   c.selectedIndex.value = 0;
+    //   print(c.selectedIndex.value);
+    // });
     // Future.delayed(Duration(seconds: 0), () {
     //   // Navigator.push(context, MaterialPageRoute(builder: (_) => Screen2()));
     //   showDialog<String>(
