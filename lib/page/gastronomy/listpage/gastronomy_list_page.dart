@@ -56,11 +56,17 @@ class _ListGastronomyPageState extends State<ListGastronomyPage> {
                         textAlign: TextAlign.center,
                         text: TextSpan(
                           text: 'Feel a New Experience In Culinary Through',
-                          style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralWhite),
+                          style: GoogleFonts.orelegaOne(
+                              fontSize: 60,
+                              fontWeight: FontWeight.w400,
+                              color: ONetralWhite),
                           children: <TextSpan>[
                             TextSpan(
                               text: ' Gastronomy',
-                              style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                              style: GoogleFonts.orelegaOne(
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.w400,
+                                  color: OPrimaryColor),
                             ),
                           ],
                         ),
@@ -80,11 +86,17 @@ class _ListGastronomyPageState extends State<ListGastronomyPage> {
                       textAlign: TextAlign.center,
                       text: TextSpan(
                         text: 'Find Wonderful',
-                        style: GoogleFonts.orelegaOne(fontSize: 55, fontWeight: FontWeight.w400, color: ONetralBlack),
+                        style: GoogleFonts.orelegaOne(
+                            fontSize: 55,
+                            fontWeight: FontWeight.w400,
+                            color: ONetralBlack),
                         children: <TextSpan>[
                           TextSpan(
                             text: ' Culinary',
-                            style: GoogleFonts.orelegaOne(fontSize: 55, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 55,
+                                fontWeight: FontWeight.w400,
+                                color: OPrimaryColor),
                           ),
                         ],
                       ),
@@ -98,7 +110,8 @@ class _ListGastronomyPageState extends State<ListGastronomyPage> {
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: l.foods.length,
-                      itemBuilder: (BuildContext context, int index) => ListItem(
+                      itemBuilder: (BuildContext context, int index) =>
+                          ListItem(
                             index: index,
                           ))
                   : CircularProgressIndicator())
@@ -146,7 +159,10 @@ class ListItem extends StatelessWidget {
                             width: 427,
                             height: 232,
                             child: FittedBox(
-                              child: Image.network("http://gapulo.tech${l.foods[index].culturePictures[0].picture}", fit: BoxFit.cover, errorBuilder: (context, error, stackTrace) {
+                              child: Image.network(
+                                  "http://gapulo.tech${l.foods[index].culturePictures[0].picture}",
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) {
                                 return Column(
                                   children: [
                                     Container(
@@ -154,7 +170,8 @@ class ListItem extends StatelessWidget {
                                       color: Colors.white,
                                       alignment: Alignment.center,
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Icon(
                                             Icons.warning_rounded,
@@ -163,20 +180,29 @@ class ListItem extends StatelessWidget {
                                           ),
                                           Text(
                                             'No Available Image',
-                                            style: TextStyle(fontSize: 10, color: Colors.black),
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.black),
                                           ),
                                         ],
                                       ),
                                     ),
                                   ],
                                 );
-                              }, loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                              }, loadingBuilder: (BuildContext context,
+                                      Widget child,
+                                      ImageChunkEvent? loadingProgress) {
                                 if (loadingProgress == null) return child;
                                 return SizedBox(
                                   width: 50,
                                   height: 50,
                                   child: CircularProgressIndicator(
-                                    value: loadingProgress.expectedTotalBytes != null ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes! : null,
+                                    value: loadingProgress.expectedTotalBytes !=
+                                            null
+                                        ? loadingProgress
+                                                .cumulativeBytesLoaded /
+                                            loadingProgress.expectedTotalBytes!
+                                        : null,
                                   ),
                                 );
                               }),
@@ -200,7 +226,8 @@ class ListItem extends StatelessWidget {
                                 Text(l.foods[index].name).nunito20s().black(),
                                 Row(
                                   children: [
-                                    Image.asset("assets/images/ic_location_primary.png"),
+                                    Image.asset(
+                                        "assets/images/ic_location_primary.png"),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -217,7 +244,11 @@ class ListItem extends StatelessWidget {
                               maxLines: 4,
                             ).nunito20s().black(),
                             SizedBox(height: 30),
-                            GestureDetector(onTap: () {}, child: const Text("Learn it more...").nunito25s().primary()),
+                            GestureDetector(
+                                onTap: () {},
+                                child: const Text("Learn it more...")
+                                    .nunito25s()
+                                    .primary()),
                           ],
                         ),
                       )

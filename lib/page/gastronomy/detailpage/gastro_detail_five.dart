@@ -42,7 +42,10 @@ class GastroDetailFive extends StatelessWidget {
                     height: 280,
                   ),
                   SizedBox(height: 20.5),
-                  CustomRoundedImage(image: "assets/images/img_recipe_ayam.png", outlineRounded: 20, height: 280),
+                  CustomRoundedImage(
+                      image: "assets/images/img_recipe_ayam.png",
+                      outlineRounded: 20,
+                      height: 280),
                 ],
               ),
             ),
@@ -65,7 +68,9 @@ class GastroDetailFive extends StatelessWidget {
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('${index + 1}. ${directions[index]}').nunito20s().black(),
+                              Text('${index + 1}. ${directions[index]}')
+                                  .nunito20s()
+                                  .black(),
                               SizedBox(height: 2),
                             ],
                           );
