@@ -46,14 +46,14 @@ class HomeBodyOne extends StatelessWidget {
                                 height: 100,
                                 child: RichText(
                                   text: TextSpan(
-                                    text: 'Art ',
+                                    text: 'This is Art',
                                     style: GoogleFonts.orelegaOne(
                                         fontSize: 25,
                                         fontWeight: FontWeight.w400,
                                         color: OPrimaryColor),
                                     children: <TextSpan>[
                                       TextSpan(
-                                        text: 'Behind The Food is',
+                                        text: 'Behind Of The Food ',
                                         style: GoogleFonts.orelegaOne(
                                             fontSize: 25,
                                             fontWeight: FontWeight.w400,

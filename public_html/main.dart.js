@@ -94017,15 +94017,15 @@ A.qV.prototype={
 F(a){var s=null,r=A.di(10)
 return A.bW(s,A.X(s,A.cO(A.di(10),A.at(this.c,B.aF,s,s),B.Q),B.i,s,s,new A.br(s,s,s,r,B.pd,s,s,B.K),s,s,s,s,s,s,s),B.B,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s)}}
 A.O8.prototype={
-F(a0){var s,r,q,p,o,n,m,l,k=null,j="Behind The Food is",i=4278520598,h=" Rarely ",g="Explore The Food",f="assets/images/ic_penari.png",e="Contains a list of foods and food backgrounds",d="assets/images/ic_recipe.png",c="Gastronomy",b=A.bH(a0,k,t.w).w,a=A.o(k,50,k)
-if(b.a.a<800){b=A.a5(B.r,25,B.f)
+F(a){var s,r,q,p,o,n,m,l,k=null,j=4278520598,i=" Rarely ",h="Explore The Food",g="assets/images/ic_penari.png",f="Contains a list of foods and food backgrounds",e="assets/images/ic_recipe.png",d="Gastronomy",c=A.bH(a,k,t.w).w,b=A.o(k,50,k)
+if(c.a.a<800){c=A.a5(B.r,25,B.f)
 s=t.p
-s=new A.aX(new A.ac(40,0,40,0),A.W(A.a([A.af(A.a([A.aD(A.W(A.a([A.X(k,A.cw(k,k,B.P,k,k,!0,k,A.ah(A.a([A.ah(k,k,A.a5(new A.C(i),25,B.f),j),A.ah(k,k,A.a5(B.r,25,B.f),h),A.ah(k,k,A.a5(new A.C(i),25,B.f),"Known")],t.n),k,b,"Art "),B.N,k,k,B.G,B.J),B.i,k,k,k,k,100,k,k,k,k,200),A.X(k,A.hV(A.hZ(A.hH(A.hB(A.q(A.q(B.XZ,A.a7(k,15,B.x)),B.w)),A.b0(3e5,0,0),A.b0(5e5,0,0))),A.b0(4e5,0,0)),B.i,k,k,k,k,150,k,k,k,k,400),new A.b1(A.dR(B.r,50,k,k,new A.acG(),30,g,k,15,k,B.al,200),k)],s),B.p,B.h,B.e),2,k),A.aD(A.W(A.a([A.at(f,k,k,k)],s),B.p,B.h,B.e),1,k)],s),B.p,B.h,B.e),B.dg,A.aoK(B.Bf,A.a([A.aCX(k,e,d,k,new A.acH(this),c),A.o(k,20,k),A.aCX(k,u.H,"assets/images/ic_culture.png",k,new A.acI(this),"Culture"),A.o(k,20,k),B.IP],s),B.a_L,B.ay,B.Bf,20,0)],s),B.p,B.h,B.e),k)
-b=s}else{$.ak()
-b=$.r().xr
-b=$.l.p$.z.h(0,b)
-b.toString
-b=A.t(b).gS()
+s=new A.aX(new A.ac(40,0,40,0),A.W(A.a([A.af(A.a([A.aD(A.W(A.a([A.X(k,A.cw(k,k,B.P,k,k,!0,k,A.ah(A.a([A.ah(k,k,A.a5(new A.C(j),25,B.f),"Behind Of The Food "),A.ah(k,k,A.a5(B.r,25,B.f),i),A.ah(k,k,A.a5(new A.C(j),25,B.f),"Known")],t.n),k,c,"This is Art"),B.N,k,k,B.G,B.J),B.i,k,k,k,k,100,k,k,k,k,200),A.X(k,A.hV(A.hZ(A.hH(A.hB(A.q(A.q(B.XZ,A.a7(k,15,B.x)),B.w)),A.b0(3e5,0,0),A.b0(5e5,0,0))),A.b0(4e5,0,0)),B.i,k,k,k,k,150,k,k,k,k,400),new A.b1(A.dR(B.r,50,k,k,new A.acG(),30,h,k,15,k,B.al,200),k)],s),B.p,B.h,B.e),2,k),A.aD(A.W(A.a([A.at(g,k,k,k)],s),B.p,B.h,B.e),1,k)],s),B.p,B.h,B.e),B.dg,A.aoK(B.Bf,A.a([A.aCX(k,f,e,k,new A.acH(this),d),A.o(k,20,k),A.aCX(k,u.H,"assets/images/ic_culture.png",k,new A.acI(this),"Culture"),A.o(k,20,k),B.IP],s),B.a_L,B.ay,B.Bf,20,0)],s),B.p,B.h,B.e),k)
+c=s}else{$.ak()
+c=$.r().xr
+c=$.l.p$.z.h(0,c)
+c.toString
+c=A.t(c).gS()
 s=$.r().xr
 s=$.l.p$.z.h(0,s)
 s.toString
@@ -94033,31 +94033,31 @@ A.t(s).toString
 s=$.aV()
 r=s.d
 if(r==null){r=self.window.devicePixelRatio
-if(r===0)r=1}r=b.P(0,r)
-b=$.r().xr
-b=$.l.p$.z.h(0,b)
-b.toString
-b=A.t(b).gS()
+if(r===0)r=1}r=c.P(0,r)
+c=$.r().xr
+c=$.l.p$.z.h(0,c)
+c.toString
+c=A.t(c).gS()
 q=$.r().xr
 q=$.l.p$.z.h(0,q)
 q.toString
 A.t(q).toString
 q=s.d
 if(q==null){q=self.window.devicePixelRatio
-if(q===0)q=1}q=b.P(0,q)
-b=A.a5(B.r,75,B.f)
-r=A.X(k,A.cw(k,k,B.P,k,k,!0,k,A.ah(A.a([A.ah(k,k,A.a5(new A.C(i),75,B.f),j),A.ah(k,k,A.a5(B.r,75,B.f),h),A.ah(k,k,A.a5(new A.C(i),75,B.f),"Known")],t.n),k,b,"Art "),B.N,k,k,B.G,B.J),B.i,k,k,k,k,q.b*0.41,k,k,k,k,r.a*0.24)
+if(q===0)q=1}q=c.P(0,q)
+c=A.a5(B.r,75,B.f)
+r=A.X(k,A.cw(k,k,B.P,k,k,!0,k,A.ah(A.a([A.ah(k,k,A.a5(new A.C(j),75,B.f),"Behind The Food is"),A.ah(k,k,A.a5(B.r,75,B.f),i),A.ah(k,k,A.a5(new A.C(j),75,B.f),"Known")],t.n),k,c,"Art "),B.N,k,k,B.G,B.J),B.i,k,k,k,k,q.b*0.41,k,k,k,k,r.a*0.24)
 q=$.r().xr
 q=$.l.p$.z.h(0,q)
 q.toString
 q=A.t(q).gS()
-b=$.r().xr
-b=$.l.p$.z.h(0,b)
-b.toString
-A.t(b).toString
-b=s.d
-if(b==null){b=self.window.devicePixelRatio
-if(b===0)b=1}b=A.o(k,q.P(0,b).b*0.026,k)
+c=$.r().xr
+c=$.l.p$.z.h(0,c)
+c.toString
+A.t(c).toString
+c=s.d
+if(c==null){c=self.window.devicePixelRatio
+if(c===0)c=1}c=A.o(k,q.P(0,c).b*0.026,k)
 q=$.r().xr
 q=$.l.p$.z.h(0,q)
 q.toString
@@ -94114,9 +94114,9 @@ A.t(m).toString
 m=s.d
 if(m==null){m=self.window.devicePixelRatio
 if(m===0)m=1}l=t.p
-n=A.aD(A.W(A.a([r,b,p,q,new A.b1(A.dR(B.r,0.065*o.P(0,m).b,k,k,new A.acJ(this),30,g,k,18,k,k,0.13*n.a),k)],l),B.p,B.h,B.e),2,k)
-m=A.aD(A.at(f,k,k,k),2,k)
-o=A.aCX(B.p,e,d,B.h,new A.acK(),c)
+n=A.aD(A.W(A.a([r,c,p,q,new A.b1(A.dR(B.r,0.065*o.P(0,m).b,k,k,new A.acJ(this),30,h,k,18,k,k,0.13*n.a),k)],l),B.p,B.h,B.e),2,k)
+m=A.aD(A.at(g,k,k,k),2,k)
+o=A.aCX(B.p,f,e,B.h,new A.acK(),d)
 q=$.r().xr
 q=$.l.p$.z.h(0,q)
 q.toString
@@ -94126,9 +94126,9 @@ p=$.l.p$.z.h(0,p)
 p.toString
 A.t(p).toString
 p=s.d
-if(p==null){b=self.window.devicePixelRatio
-if(b===0)b=1}else b=p
-b=A.o(k,q.P(0,b).b*0.08,k)
+if(p==null){c=self.window.devicePixelRatio
+if(c===0)c=1}else c=p
+c=A.o(k,q.P(0,c).b*0.08,k)
 q=$.r().xr
 q=$.l.p$.z.h(0,q)
 q.toString
@@ -94139,8 +94139,8 @@ r.toString
 A.t(r).toString
 s=s.d
 if(s==null){s=self.window.devicePixelRatio
-if(s===0)s=1}l=new A.aX(new A.ac(100,0,100,0),A.af(A.a([n,m,A.aD(A.X(k,A.W(A.a([o,b,B.IO,A.o(k,q.P(0,s).b*0.08,k),B.IQ],l),B.p,B.h,B.e),B.i,k,k,k,k,k,k,k,k,k,k),1,k)],l),B.j,B.h,B.e),k)
-b=l}return A.W(A.a([a,b],t.p),B.j,B.h,B.e)}}
+if(s===0)s=1}l=new A.aX(new A.ac(100,0,100,0),A.af(A.a([n,m,A.aD(A.X(k,A.W(A.a([o,c,B.IO,A.o(k,q.P(0,s).b*0.08,k),B.IQ],l),B.p,B.h,B.e),B.i,k,k,k,k,k,k,k,k,k,k),1,k)],l),B.j,B.h,B.e),k)
+c=l}return A.W(A.a([b,c],t.p),B.j,B.h,B.e)}}
 A.acG.prototype={
 $0(){},
 $S:3}
