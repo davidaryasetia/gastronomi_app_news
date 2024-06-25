@@ -93458,7 +93458,7 @@ A.B4.prototype={
 a3(){return new A.WG(B.o)}}
 A.WG.prototype={
 F(a){var s=null,r=t.p,q=A.af(A.a([A.at("assets/images/img_moon.png",s,s,s)],r),B.j,B.aH,B.e),p=A.af(A.a([A.at("assets/images/img_ayam2.png",s,s,s)],r),B.bg,B.aH,B.e),o=A.at("assets/images/img_bg_list.png",s,s,s),n=A.a5(B.T,75,B.f)
-return A.bB(B.H,A.a([q,p,o,A.W(A.a([B.RV,new A.aX(B.oa,A.W(A.a([A.o(A.cw(s,s,B.P,s,s,!0,s,A.ah(A.a([A.ah(s,s,A.a5(B.r,75,B.f),"Extraordinary "),A.ah(s,s,A.a5(B.T,75,B.f),"Knowledge Through The "),A.ah(s,s,A.a5(B.r,75,B.f),"Food")],t.n),s,n,"Discover  "),B.N,s,s,B.G,B.J),320,633),B.e0,A.o(A.hV(A.hZ(A.hH(A.hB(A.q(A.q(B.Xz,A.a7(s,20,B.al)),B.w)),A.b0(3e5,0,0),A.b0(5e5,0,0))),A.b0(4e5,0,0)),54,512),B.e0,new A.b1(A.dR(B.r,50,s,s,new A.atx(),30,"Explore The Food",s,18,s,s,200),s),B.Aw,new A.b1(new A.aX(B.k_,A.at("assets/images/img_arrow_up.png",s,s,s),s),s)],r),B.p,B.h,B.e),s)],r),B.j,B.h,B.e)],r),B.t,B.I,s)}}
+return A.bB(B.H,A.a([q,p,o,A.W(A.a([B.RV,new A.aX(B.oa,A.W(A.a([A.o(A.cw(s,s,B.P,s,s,!0,s,A.ah(A.a([A.ah(s,s,A.a5(B.r,75,B.f),"Extraordinary "),A.ah(s,s,A.a5(B.T,75,B.f),"Knowledge Through The "),A.ah(s,s,A.a5(B.r,75,B.f),"Food")],t.n),s,n,"Discover Taste  "),B.N,s,s,B.G,B.J),320,633),B.e0,A.o(A.hV(A.hZ(A.hH(A.hB(A.q(A.q(B.Xz,A.a7(s,20,B.al)),B.w)),A.b0(3e5,0,0),A.b0(5e5,0,0))),A.b0(4e5,0,0)),54,512),B.e0,new A.b1(A.dR(B.r,50,s,s,new A.atx(),30,"Explore The Food",s,18,s,s,200),s),B.Aw,new A.b1(new A.aX(B.k_,A.at("assets/images/img_arrow_up.png",s,s,s),s),s)],r),B.p,B.h,B.e),s)],r),B.j,B.h,B.e)],r),B.t,B.I,s)}}
 A.atx.prototype={
 $0(){A.d0($.ak(),B.J2,t.z)},
 $S:3}
@@ -94020,7 +94020,7 @@ A.O8.prototype={
 F(a){var s,r,q,p,o,n,m,l,k=null,j=4278520598,i=" Rarely ",h="Explore The Food",g="assets/images/ic_penari.png",f="Contains a list of foods and food backgrounds",e="assets/images/ic_recipe.png",d="Gastronomy",c=A.bH(a,k,t.w).w,b=A.o(k,50,k)
 if(c.a.a<800){c=A.a5(B.r,25,B.f)
 s=t.p
-s=new A.aX(new A.ac(40,0,40,0),A.W(A.a([A.af(A.a([A.aD(A.W(A.a([A.X(k,A.cw(k,k,B.P,k,k,!0,k,A.ah(A.a([A.ah(k,k,A.a5(new A.C(j),25,B.f),"Behind Of The Food "),A.ah(k,k,A.a5(B.r,25,B.f),i),A.ah(k,k,A.a5(new A.C(j),25,B.f),"Known")],t.n),k,c,"This is Art"),B.N,k,k,B.G,B.J),B.i,k,k,k,k,100,k,k,k,k,200),A.X(k,A.hV(A.hZ(A.hH(A.hB(A.q(A.q(B.XZ,A.a7(k,15,B.x)),B.w)),A.b0(3e5,0,0),A.b0(5e5,0,0))),A.b0(4e5,0,0)),B.i,k,k,k,k,150,k,k,k,k,400),new A.b1(A.dR(B.r,50,k,k,new A.acG(),30,h,k,15,k,B.al,200),k)],s),B.p,B.h,B.e),2,k),A.aD(A.W(A.a([A.at(g,k,k,k)],s),B.p,B.h,B.e),1,k)],s),B.p,B.h,B.e),B.dg,A.aoK(B.Bf,A.a([A.aCX(k,f,e,k,new A.acH(this),d),A.o(k,20,k),A.aCX(k,u.H,"assets/images/ic_culture.png",k,new A.acI(this),"Culture"),A.o(k,20,k),B.IP],s),B.a_L,B.ay,B.Bf,20,0)],s),B.p,B.h,B.e),k)
+s=new A.aX(new A.ac(40,0,40,0),A.W(A.a([A.af(A.a([A.aD(A.W(A.a([A.X(k,A.cw(k,k,B.P,k,k,!0,k,A.ah(A.a([A.ah(k,k,A.a5(new A.C(j),25,B.f),"Behind The Food "),A.ah(k,k,A.a5(B.r,25,B.f),i),A.ah(k,k,A.a5(new A.C(j),25,B.f),"Known")],t.n),k,c,"Art"),B.N,k,k,B.G,B.J),B.i,k,k,k,k,100,k,k,k,k,200),A.X(k,A.hV(A.hZ(A.hH(A.hB(A.q(A.q(B.XZ,A.a7(k,15,B.x)),B.w)),A.b0(3e5,0,0),A.b0(5e5,0,0))),A.b0(4e5,0,0)),B.i,k,k,k,k,150,k,k,k,k,400),new A.b1(A.dR(B.r,50,k,k,new A.acG(),30,h,k,15,k,B.al,200),k)],s),B.p,B.h,B.e),2,k),A.aD(A.W(A.a([A.at(g,k,k,k)],s),B.p,B.h,B.e),1,k)],s),B.p,B.h,B.e),B.dg,A.aoK(B.Bf,A.a([A.aCX(k,f,e,k,new A.acH(this),d),A.o(k,20,k),A.aCX(k,u.H,"assets/images/ic_culture.png",k,new A.acI(this),"Culture"),A.o(k,20,k),B.IP],s),B.a_L,B.ay,B.Bf,20,0)],s),B.p,B.h,B.e),k)
 c=s}else{$.ak()
 c=$.r().xr
 c=$.l.p$.z.h(0,c)
@@ -94241,7 +94241,7 @@ $S:0}
 A.Oa.prototype={
 F(a){var s,r,q,p,o,n,m,l=null,k=4278520598,j="Best Features",i="assets/images/img_recipe.png",h="See it now...",g="assets/images/img_culture.png",f="assets/images/img_village.png",e=A.bH(a,l,t.w).w.a.a,d=e<800,c=t.n
 if(d){s=A.a5(new A.C(k),30,B.f)
-s=new A.aX(new A.ac(40,0,40,0),A.W(A.a([A.cw(l,l,B.P,l,l,!0,l,A.ah(A.a([A.ah(l,l,A.a5(B.r,30,B.f),j),A.ah(l,l,A.a5(new A.C(k),30,B.f)," You Can Find")],c),l,s,"Our "),B.aw,l,l,B.G,B.J),A.o(l,10,l),A.q(B.XT,A.a7(l,20,B.al))],t.p),B.j,B.ap,B.e),l)
+s=new A.aX(new A.ac(40,0,40,0),A.W(A.a([A.cw(l,l,B.P,l,l,!0,l,A.ah(A.a([A.ah(l,l,A.a5(B.r,30,B.f),j),A.ah(l,l,A.a5(new A.C(k),30,B.f)," You Can Find")],c),l,s,"O "),B.aw,l,l,B.G,B.J),A.o(l,10,l),A.q(B.XT,A.a7(l,20,B.al))],t.p),B.j,B.ap,B.e),l)
 c=s}else{s=A.a5(new A.C(k),70,B.f)
 s=A.o(A.cw(l,l,B.P,l,l,!0,l,A.ah(A.a([A.ah(l,l,A.a5(B.r,70,B.f),j),A.ah(l,l,A.a5(new A.C(k),70,B.f)," You Can Find Here")],c),l,s,"Our "),B.N,l,l,B.G,B.J),250,650)
 c=new A.aX(B.o9,A.af(A.a([s,e<1600?A.o(A.q(B.AW,A.a7(l,20,B.al)),100,600):A.o(A.q(B.AW,A.a7(l,30,B.al)),80,800)],t.p),B.p,B.aI,B.e),l)}s=A.o(l,d?20:50,l)
@@ -94472,7 +94472,7 @@ p=A.bB(B.H,A.a([new A.b1(q,g),A.X(g,g,B.i,A.aa(153,0,0,0),g,g,g,300,g,g,g,g,p.a)
 q=A.o(g,40,g)
 o=A.af(A.a([new A.b1(A.X(g,A.cu(B.A,A.at("assets/images/img_restaurant2.png",g,g,g),B.i,B.aF),B.i,g,g,g,g,450,g,g,g,g,1000),g)],s),B.bg,B.aH,B.e)
 n=A.a5(B.T,60,B.f)
-n=A.o(A.cw(g,g,B.P,g,g,!0,g,A.ah(A.a([A.ah(g,g,A.a5(B.r,60,B.f),"Restaurant ")],t.n),g,n,"Let\u2019s Find Your  "),B.N,g,g,B.G,B.J),120,633)
+n=A.o(A.cw(g,g,B.P,g,g,!0,g,A.ah(A.a([A.ah(g,g,A.a5(B.r,60,B.f),"Restaurant ")],t.n),g,n,"Let\u2019s Finding Your  "),B.N,g,g,B.G,B.J),120,633)
 m=A.o(g,30,g)
 l=A.o(A.hV(A.hZ(A.hH(A.hB(A.q(A.q(B.XH,A.a7(g,20,B.al)),B.w)),A.b0(3e5,0,0),A.b0(5e5,0,0))),A.b0(4e5,0,0)),110,340)
 k=A.o(g,70,g)

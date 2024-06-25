@@ -28,16 +28,25 @@ class HomeBodyTwo extends StatelessWidget {
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
-                        text: 'Our ',
-                        style: GoogleFonts.orelegaOne(fontSize: 30, fontWeight: FontWeight.w400, color: Color(0xff050B16)),
+                        text: 'O ',
+                        style: GoogleFonts.orelegaOne(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xff050B16)),
                         children: <TextSpan>[
                           TextSpan(
                             text: 'Best Features',
-                            style: GoogleFonts.orelegaOne(fontSize: 30, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w400,
+                                color: OPrimaryColor),
                           ),
                           TextSpan(
                             text: ' You Can Find',
-                            style: GoogleFonts.orelegaOne(fontSize: 30, fontWeight: FontWeight.w400, color: Color(0xff050B16)),
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff050B16)),
                           ),
                         ],
                       ),
@@ -64,15 +73,24 @@ class HomeBodyTwo extends StatelessWidget {
                       child: RichText(
                         text: TextSpan(
                           text: 'Our ',
-                          style: GoogleFonts.orelegaOne(fontSize: 70, fontWeight: FontWeight.w400, color: Color(0xff050B16)),
+                          style: GoogleFonts.orelegaOne(
+                              fontSize: 70,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff050B16)),
                           children: <TextSpan>[
                             TextSpan(
                               text: 'Best Features',
-                              style: GoogleFonts.orelegaOne(fontSize: 70, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                              style: GoogleFonts.orelegaOne(
+                                  fontSize: 70,
+                                  fontWeight: FontWeight.w400,
+                                  color: OPrimaryColor),
                             ),
                             TextSpan(
                               text: ' You Can Find Here',
-                              style: GoogleFonts.orelegaOne(fontSize: 70, fontWeight: FontWeight.w400, color: Color(0xff050B16)),
+                              style: GoogleFonts.orelegaOne(
+                                  fontSize: 70,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff050B16)),
                             ),
                           ],
                         ),
@@ -84,12 +102,16 @@ class HomeBodyTwo extends StatelessWidget {
                         SizedBox(
                             width: 600,
                             height: 100,
-                            child: const Text("Most people don't know that food can not only be enjoyed in terms of taste but also the story behind the food").nunito20m(),
+                            child: const Text(
+                                    "Most people don't know that food can not only be enjoyed in terms of taste but also the story behind the food")
+                                .nunito20m(),
                           )
                         : SizedBox(
                             width: 800,
                             height: 80,
-                            child: const Text("Most people don't know that food can not only be enjoyed in terms of taste but also the story behind the food").nunito30m(),
+                            child: const Text(
+                                    "Most people don't know that food can not only be enjoyed in terms of taste but also the story behind the food")
+                                .nunito30m(),
                           )
                   ],
                 ),

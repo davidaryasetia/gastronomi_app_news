@@ -51,20 +51,32 @@ class _GastroBodyOneState extends State<GastroBodyOne> {
                     height: 320,
                     child: RichText(
                       text: TextSpan(
-                        text: 'Discover  ',
-                        style: GoogleFonts.orelegaOne(fontSize: 75, fontWeight: FontWeight.w400, color: ONetralBlack),
+                        text: 'Discover Taste  ',
+                        style: GoogleFonts.orelegaOne(
+                            fontSize: 75,
+                            fontWeight: FontWeight.w400,
+                            color: ONetralBlack),
                         children: <TextSpan>[
                           TextSpan(
                             text: 'Extraordinary ',
-                            style: GoogleFonts.orelegaOne(fontSize: 75, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 75,
+                                fontWeight: FontWeight.w400,
+                                color: OPrimaryColor),
                           ),
                           TextSpan(
                             text: 'Knowledge Through The ',
-                            style: GoogleFonts.orelegaOne(fontSize: 75, fontWeight: FontWeight.w400, color: ONetralBlack),
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 75,
+                                fontWeight: FontWeight.w400,
+                                color: ONetralBlack),
                           ),
                           TextSpan(
                             text: 'Food',
-                            style: GoogleFonts.orelegaOne(fontSize: 75, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 75,
+                                fontWeight: FontWeight.w400,
+                                color: OPrimaryColor),
                           ),
                         ],
                       ),
@@ -74,7 +86,8 @@ class _GastroBodyOneState extends State<GastroBodyOne> {
                   SizedBox(
                     width: 512,
                     height: 54,
-                    child: const Text("On this page you will meet various foods with a million meanings and stories that you have never had before.")
+                    child: const Text(
+                            "On this page you will meet various foods with a million meanings and stories that you have never had before.")
                         .nunito20m()
                         .black()
                         .animate()

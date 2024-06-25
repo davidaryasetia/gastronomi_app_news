@@ -76,12 +76,18 @@ class _RestoBodyOneState extends State<RestoBodyOne> {
                       height: 120,
                       child: RichText(
                         text: TextSpan(
-                          text: 'Let’s Find Your  ',
-                          style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralBlack),
+                          text: 'Let’s Finding Your  ',
+                          style: GoogleFonts.orelegaOne(
+                              fontSize: 60,
+                              fontWeight: FontWeight.w400,
+                              color: ONetralBlack),
                           children: <TextSpan>[
                             TextSpan(
                               text: 'Restaurant ',
-                              style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                              style: GoogleFonts.orelegaOne(
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.w400,
+                                  color: OPrimaryColor),
                             ),
                             // TextSpan(
                             //   text: 'Knowledge Through The ',
@@ -95,7 +101,8 @@ class _RestoBodyOneState extends State<RestoBodyOne> {
                     SizedBox(
                       width: 340,
                       height: 110,
-                      child: const Text("Lombok Island has many restaurants that provide so many dishes that cannot be found in other areas besides Lombok Island")
+                      child: const Text(
+                              "Lombok Island has many restaurants that provide so many dishes that cannot be found in other areas besides Lombok Island")
                           .nunito20m()
                           .black()
                           .animate()
