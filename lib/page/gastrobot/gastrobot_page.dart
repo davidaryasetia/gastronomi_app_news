@@ -47,7 +47,15 @@ class _GastrobotPageState extends State<GastrobotPage> {
               SizedBox(
                 height: currentWidth < 600 ? 150 : 120,
               ),
-              currentWidth < 600 ? Container(width: 300, height: 300, child: FittedBox(fit: BoxFit.cover, child: Image.asset("assets/images/ic_penari_blur.png"))) : Image.asset("assets/images/ic_penari_blur.png")
+              currentWidth < 600
+                  ? Container(
+                      width: 300,
+                      height: 300,
+                      child: FittedBox(
+                          fit: BoxFit.cover,
+                          child:
+                              Image.asset("assets/images/ic_penari_blur.png")))
+                  : Image.asset("assets/images/ic_penari_blur.png")
             ]),
           ],
         ),
@@ -71,7 +79,10 @@ class _GastrobotPageState extends State<GastrobotPage> {
                           // contentPadding: EdgeInsets.all(20.0),
                         ),
                         controller: _controller,
-                        style: GoogleFonts.nunito(fontSize: 18, fontWeight: FontWeight.w600, color: ONetralBlack),
+                        style: GoogleFonts.nunito(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: ONetralBlack),
                       ),
                     )),
                     IconButton(
@@ -100,7 +111,8 @@ class _GastrobotPageState extends State<GastrobotPage> {
         addMessage(Message(text: DialogText(text: [text])), true);
       });
 
-      DetectIntentResponse response = await dialogFlowtter.detectIntent(queryInput: QueryInput(text: TextInput(text: text)));
+      DetectIntentResponse response = await dialogFlowtter.detectIntent(
+          queryInput: QueryInput(text: TextInput(text: text)));
       if (response.message == null) return;
       setState(() {
         addMessage(response.message!);

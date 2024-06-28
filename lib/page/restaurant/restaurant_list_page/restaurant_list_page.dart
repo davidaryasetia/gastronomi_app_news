@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gastronomy/api/api_service.dart';
 import 'package:gastronomy/controller/global_controller.dart';
+import 'package:gastronomy/model/restaurant.dart';
 import 'package:gastronomy/page/restaurant/restaurant_list_page/restraurant_body_list_page.dart';
 import 'package:gastronomy/utils/colors.dart';
 import 'package:gastronomy/widget/custom/custom_appbar.dart';
@@ -16,11 +18,21 @@ class RestaurantListPage extends StatefulWidget {
 
 class _RestaurantListPageState extends State<RestaurantListPage> {
   var gstate = Get.put(GlobalController());
+
+  // Backend Program
+  late Future<RestaurantData> futureRestaurants;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   gstate.selectedIndex.value = 2;
+  //   print(gstate.selectedIndex.value);
+  // }
+
   @override
   void initState() {
     super.initState();
-    gstate.selectedIndex.value = 2;
-    print(gstate.selectedIndex.value);
+    futureRestaurants = ApiService.fetchRestaurants();
   }
 
   @override
@@ -34,14 +46,77 @@ class _RestaurantListPageState extends State<RestaurantListPage> {
               // crossAxisAlignment: CrossAxisAlignment.start,
               // mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 64,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        text: 'Let’s See Wonderful ',
+                        style: GoogleFonts.orelegaOne(
+                            fontSize: 70,
+                            fontWeight: FontWeight.w400,
+                            color: ONetralBlack),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'Culture ',
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 70,
+                                fontWeight: FontWeight.w400,
+                                color: OPrimaryColor),
+                          ),
+                          TextSpan(
+                            text: '&',
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 70,
+                                fontWeight: FontWeight.w400,
+                                color: ONetralBlack),
+                          ),
+                          TextSpan(
+                            text: 'Tradition',
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 70,
+                                fontWeight: FontWeight.w400,
+                                color: OPrimaryColor),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: Get.width / 1536 * 150),
-                  child: Column(
-                    children: [
-                      RestaurantBodyListPage(),
-                      const Divider(),
-                    ],
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Get.width / 1536 * 150),
+                  child: FutureBuilder<RestaurantData>(
+                    future: futureRestaurants,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        List<Restaurant> restaurants = snapshot.data!.data;
+                        return ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: restaurants.length,
+                          itemBuilder: (context, index) {
+                            return RestaurantBodyListPage(
+                                restaurant: restaurants[index]);
+                          },
+                        );
+                      } else if (snapshot.hasError) {
+                        return Text("${snapshot.error}");
+                      }
+                      return CircularProgressIndicator();
+                    },
                   ),
+                ),
+                SizedBox(
+                  height: 40,
                 ),
                 const FootBar()
               ],
@@ -78,11 +153,17 @@ class BackgroundImage extends StatelessWidget {
               textAlign: TextAlign.center,
               text: TextSpan(
                 text: 'This is The Perfect Time To Get a New Travel Experience',
-                style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralWhite),
+                style: GoogleFonts.orelegaOne(
+                    fontSize: 60,
+                    fontWeight: FontWeight.w400,
+                    color: ONetralWhite),
                 children: <TextSpan>[
                   TextSpan(
                     text: ' For You',
-                    style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                    style: GoogleFonts.orelegaOne(
+                        fontSize: 60,
+                        fontWeight: FontWeight.w400,
+                        color: OPrimaryColor),
                   ),
                 ],
               ),

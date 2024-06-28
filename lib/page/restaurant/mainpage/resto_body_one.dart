@@ -76,7 +76,7 @@ class _RestoBodyOneState extends State<RestoBodyOne> {
                       height: 120,
                       child: RichText(
                         text: TextSpan(
-                          text: 'Let’s Finding Your  ',
+                          text: 'Let’s Finds Your  ',
                           style: GoogleFonts.orelegaOne(
                               fontSize: 60,
                               fontWeight: FontWeight.w400,

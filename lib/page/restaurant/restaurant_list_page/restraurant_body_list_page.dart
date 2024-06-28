@@ -7,100 +7,20 @@ import 'package:gastronomy/widget/animation/on_hover_button.dart';
 import 'package:gastronomy/widget/button/button_base.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gastronomy/model/restaurant.dart';
 
 class RestaurantBodyListPage extends StatelessWidget {
-  RestaurantBodyListPage({super.key});
-  final namaController = TextEditingController(text: "");
-  final deskripsiController = TextEditingController(text: "");
-  final lokasiController = TextEditingController(text: "");
+  final Restaurant restaurant;
 
+  RestaurantBodyListPage({super.key, required this.restaurant});
   @override
   Widget build(BuildContext context) {
     return Column(
       // crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 100,
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                text: 'Let’s See Wonderful ',
-                style: GoogleFonts.orelegaOne(
-                    fontSize: 70,
-                    fontWeight: FontWeight.w400,
-                    color: ONetralBlack),
-                children: <TextSpan>[
-                  TextSpan(
-                    text: 'Culture ',
-                    style: GoogleFonts.orelegaOne(
-                        fontSize: 70,
-                        fontWeight: FontWeight.w400,
-                        color: OPrimaryColor),
-                  ),
-                  TextSpan(
-                    text: '&',
-                    style: GoogleFonts.orelegaOne(
-                        fontSize: 70,
-                        fontWeight: FontWeight.w400,
-                        color: ONetralBlack),
-                  ),
-                  TextSpan(
-                    text: 'Tradition',
-                    style: GoogleFonts.orelegaOne(
-                        fontSize: 70,
-                        fontWeight: FontWeight.w400,
-                        color: OPrimaryColor),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        OnHoverButton(
-          child: BaseButton(
-            ontap: () {
-              Get.to(RestaurantNewAddPage());
-            },
-            width: Get.width,
-            height: 0.05 * Get.height,
-            text: "Explore Restaurant",
-            textSize: 20,
-            color: OGoodGreen,
-            outlineRadius: 30.0,
-            icon: Icons.add,
-            iconColor: Colors.white,
-          ),
-        ),
-        SizedBox(
           height: 30,
         ),
-        ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: 8,
-            itemBuilder: (BuildContext context, int index) => ListItem())
-      ],
-    );
-  }
-}
-
-class ListItem extends StatelessWidget {
-  const ListItem({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
         OnHoverButton(
           child: Container(
             decoration: BoxDecoration(
@@ -127,8 +47,8 @@ class ListItem extends StatelessWidget {
                               width: 427,
                               height: 232,
                               child: FittedBox(
-                                child: Image.asset(
-                                    "assets/images/img_recipe_ayam.png"),
+                                child: Image.network('http://127.0.0.1:8000' +
+                                    restaurant.restaurantPhotos[0].photoPath),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -142,7 +62,7 @@ class ListItem extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text("Restaurant Pelecik Kangkung")
+                              Text(restaurant.nameRestaurant)
                                   .nunito30b()
                                   .black(),
                               Row(
@@ -152,33 +72,17 @@ class ListItem extends StatelessWidget {
                                   SizedBox(
                                     width: 10,
                                   ),
-                                  const Text(
-                                          "Labuan Mapin, Kec. Alas Bar., Kabupaten Sumbawa, Nusa Tenggara Bar. 84454")
+                                  Text(restaurant.address)
                                       .nunito18s()
                                       .primary(),
                                 ],
                               ),
                               SizedBox(height: 10),
                               const Text("Deskripsi:").nunito20b().black(),
-                              const Text(
-                                      "Restauran tempat makan Plecik kangkung khas NTT. daerah Labuan Mapin. ")
-                                  .nunito20s()
-                                  .black(),
+                              Text(restaurant.description).nunito20s().black(),
                               SizedBox(height: 10),
                               const Text("Menu Makanan:").nunito20b().black(),
-                              SizedBox(
-                                height: 20,
-                                width: Get.width,
-                                child: ListView.builder(
-                                    physics: NeverScrollableScrollPhysics(),
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: 5,
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      return Text("data ").nunito20s().black();
-                                    }),
-                              ),
-                              const Text("").nunito20s().black(),
+                              // Text(restaurant.listFood).nunito20s().black(),
                               // GestureDetector(onTap: () {}, child: const Text("Learn it more...").nunito25s().primary()),
                             ],
                           ),
@@ -195,9 +99,6 @@ class ListItem extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          height: 40,
-        )
       ],
     );
   }

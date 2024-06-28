@@ -24,7 +24,8 @@ class _CustomChatbotState extends State<CustomChatbot> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Padding(
-                padding: EdgeInsets.only(right: Get.width * 120 / 1536, bottom: 50),
+                padding:
+                    EdgeInsets.only(right: Get.width * 120 / 1536, bottom: 50),
                 child: OnHoverButton(
                   child: GestureDetector(
                       onTap: () {
