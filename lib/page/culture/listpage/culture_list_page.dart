@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gastronomy/api/api_service.dart';
 import 'package:gastronomy/controller/global_controller.dart';
+import 'package:gastronomy/model/culture.dart';
+import 'package:gastronomy/model/restaurant.dart';
 import 'package:gastronomy/page/culture/detailpage/culture_detail_page.dart';
+import 'package:gastronomy/page/culture/listpage/culture_body_list_page.dart';
 import 'package:gastronomy/utils/colors.dart';
 import 'package:gastronomy/utils/ext_text.dart';
 import 'package:gastronomy/widget/animation/on_hover_button.dart';
@@ -16,12 +20,21 @@ class CultureListPage extends StatefulWidget {
 }
 
 class _CultureListPageState extends State<CultureListPage> {
+// Backend Progream
+  late Future<CultureData> futureCultures;
+
   var c = Get.put(GlobalController());
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   c.selectedIndex.value = 3;
+  //   print(c.selectedIndex.value);
+  // }
+
   @override
   void initState() {
     super.initState();
-    c.selectedIndex.value = 3;
-    print(c.selectedIndex.value);
+    futureCultures = ApiService.fetchCultures();
   }
 
   @override
@@ -52,19 +65,31 @@ class _CultureListPageState extends State<CultureListPage> {
                         textAlign: TextAlign.center,
                         text: TextSpan(
                           text: 'Lombok has a variety of',
-                          style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralWhite),
+                          style: GoogleFonts.orelegaOne(
+                              fontSize: 60,
+                              fontWeight: FontWeight.w400,
+                              color: ONetralWhite),
                           children: <TextSpan>[
                             TextSpan(
                               text: ' Cultures',
-                              style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                              style: GoogleFonts.orelegaOne(
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.w400,
+                                  color: OPrimaryColor),
                             ),
                             TextSpan(
                               text: ' and',
-                              style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralWhite),
+                              style: GoogleFonts.orelegaOne(
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.w400,
+                                  color: ONetralWhite),
                             ),
                             TextSpan(
                               text: ' Tradition',
-                              style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                              style: GoogleFonts.orelegaOne(
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.w400,
+                                  color: OPrimaryColor),
                             ),
                           ],
                         ),
@@ -88,19 +113,31 @@ class _CultureListPageState extends State<CultureListPage> {
                           textAlign: TextAlign.center,
                           text: TextSpan(
                             text: 'Let’s See Wonderful',
-                            style: GoogleFonts.orelegaOne(fontSize: 55, fontWeight: FontWeight.w400, color: ONetralBlack),
+                            style: GoogleFonts.orelegaOne(
+                                fontSize: 55,
+                                fontWeight: FontWeight.w400,
+                                color: ONetralBlack),
                             children: <TextSpan>[
                               TextSpan(
                                 text: ' Culture',
-                                style: GoogleFonts.orelegaOne(fontSize: 55, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                style: GoogleFonts.orelegaOne(
+                                    fontSize: 55,
+                                    fontWeight: FontWeight.w400,
+                                    color: OPrimaryColor),
                               ),
                               TextSpan(
                                 text: ' &',
-                                style: GoogleFonts.orelegaOne(fontSize: 55, fontWeight: FontWeight.w400, color: ONetralBlack),
+                                style: GoogleFonts.orelegaOne(
+                                    fontSize: 55,
+                                    fontWeight: FontWeight.w400,
+                                    color: ONetralBlack),
                               ),
                               TextSpan(
                                 text: ' Tradition',
-                                style: GoogleFonts.orelegaOne(fontSize: 55, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                style: GoogleFonts.orelegaOne(
+                                    fontSize: 55,
+                                    fontWeight: FontWeight.w400,
+                                    color: OPrimaryColor),
                               ),
                             ],
                           ),
@@ -110,112 +147,35 @@ class _CultureListPageState extends State<CultureListPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 37),
-              ListView.builder(physics: const NeverScrollableScrollPhysics(), shrinkWrap: true, itemCount: 8, itemBuilder: (BuildContext context, int index) => ListItem())
+              const SizedBox(height: 37),
+              Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: Get.width / 1536 * 150),
+                child: FutureBuilder<CultureData>(
+                  future: futureCultures,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      List<Culture> cultures = snapshot.data!.data;
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: cultures.length,
+                        itemBuilder: (context, index) {
+                          return CultureBodyListPage(culture: cultures[index]);
+                        },
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text("${snapshot.error}");
+                    }
+                    return CircularProgressIndicator();
+                  },
+                ),
+              ),
             ],
           ),
         ),
         // const CustomAppBar(),
       ]),
-    );
-  }
-}
-
-class ListItem extends StatelessWidget {
-  const ListItem({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 80),
-          child: GestureDetector(
-            onTap: () {
-              Get.to(CultureDetailPage());
-            },
-            child: OnHoverButton(
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          child: Container(
-                            width: 314.57,
-                            height: 200,
-                            child: FittedBox(
-                              child: Image.asset("assets/images/img_recipe_ayam.png"),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          child: Container(
-                            width: 314.57,
-                            height: 200,
-                            child: FittedBox(
-                              child: Image.asset("assets/images/img_recipe_ayam.png"),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: Column(
-                          // crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                const Text("Gendang Beleq").nunito30b().black(),
-                              ],
-                            ),
-                            SizedBox(height: 15),
-                            const Text(
-                              "Ayam Taliwang adalah makanan yang berasal dari Taliwang, Sumbawa Barat, Nusa Barat Tenggara yang bahan utamanya adalah ayam kampung muda. Ayam kampung muda dibakar dengan bumbu khas Taliwang dan ...",
-                              maxLines: 6,
-                            ).nunito20s().black(),
-                            SizedBox(height: 30),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                GestureDetector(onTap: () {}, child: const Text("See more").nunito25s().primary()),
-                              ],
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  )
-                  // Divider(),
-                ],
-              ),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 10,
-        )
-      ],
     );
   }
 }

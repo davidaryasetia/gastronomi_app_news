@@ -47,9 +47,11 @@ class RestaurantBodyListPage extends StatelessWidget {
                               width: 427,
                               height: 232,
                               child: FittedBox(
-                                child: Image.network('http://127.0.0.1:8000' +
-                                    restaurant.restaurantPhotos[0].photoPath),
                                 fit: BoxFit.cover,
+                                child: Image.network(
+                                    'https://admin-gastronomi.projectbase.site' +
+                                        restaurant
+                                            .restaurantPhotos[0].photoPath),
                               ),
                             ),
                           ),
