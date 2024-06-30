@@ -36,7 +36,8 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
               children: [
                 // BackgroundImage(),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: Get.width / 1536 * 180),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Get.width / 1536 * 180),
                   child: Column(
                     children: [
                       RestaurantDetailBody(),
@@ -78,11 +79,17 @@ class BackgroundImage extends StatelessWidget {
               textAlign: TextAlign.center,
               text: TextSpan(
                 text: 'This is The Perfect Time To Get a New Travel Experience',
-                style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralWhite),
+                style: GoogleFonts.orelegaOne(
+                    fontSize: 60,
+                    fontWeight: FontWeight.w400,
+                    color: ONetralWhite),
                 children: <TextSpan>[
                   TextSpan(
                     text: ' For You',
-                    style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                    style: GoogleFonts.orelegaOne(
+                        fontSize: 60,
+                        fontWeight: FontWeight.w400,
+                        color: OPrimaryColor),
                   ),
                 ],
               ),

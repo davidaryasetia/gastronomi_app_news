@@ -125,7 +125,8 @@ class _CustomAppbarState extends State<CustomAppbar> {
                                           child: MenuItems.buildItem(item),
                                         ),
                                       ),
-                                      const DropdownMenuItem<Divider>(enabled: false, child: Divider()),
+                                      const DropdownMenuItem<Divider>(
+                                          enabled: false, child: Divider()),
                                       ...MenuItems.secondItems.map(
                                         (item) => DropdownMenuItem<MenuItem>(
                                           value: item,
@@ -134,11 +135,13 @@ class _CustomAppbarState extends State<CustomAppbar> {
                                       ),
                                     ],
                                     onChanged: (value) {
-                                      MenuItems.onChanged(context, value as MenuItem);
+                                      MenuItems.onChanged(
+                                          context, value as MenuItem);
                                     },
                                     dropdownStyleData: DropdownStyleData(
                                       width: 160,
-                                      padding: const EdgeInsets.symmetric(vertical: 6),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 6),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(4),
                                         color: Colors.black,
@@ -148,11 +151,14 @@ class _CustomAppbarState extends State<CustomAppbar> {
                                     ),
                                     menuItemStyleData: MenuItemStyleData(
                                       customHeights: [
-                                        ...List<double>.filled(MenuItems.firstItems.length, 48),
+                                        ...List<double>.filled(
+                                            MenuItems.firstItems.length, 48),
                                         8,
-                                        ...List<double>.filled(MenuItems.secondItems.length, 48),
+                                        ...List<double>.filled(
+                                            MenuItems.secondItems.length, 48),
                                       ],
-                                      padding: const EdgeInsets.only(left: 16, right: 16),
+                                      padding: const EdgeInsets.only(
+                                          left: 16, right: 16),
                                     ),
                                   ),
                                 ),
@@ -198,7 +204,8 @@ class _CustomAppbarState extends State<CustomAppbar> {
                                             break;
                                           case 4:
                                             {
-                                              Get.to(const TouristVillagePage());
+                                              Get.to(
+                                                  const TouristVillagePage());
                                             }
                                             break;
                                           case 5:
@@ -214,13 +221,25 @@ class _CustomAppbarState extends State<CustomAppbar> {
                                         }
                                       },
                                       child: Container(
-                                        decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 3, color: c.selectedIndex.value == index ? OPrimaryColor : Colors.black))),
-                                        padding: const EdgeInsets.symmetric(horizontal: 50),
+                                        decoration: BoxDecoration(
+                                            border: Border(
+                                                bottom: BorderSide(
+                                                    width: 3,
+                                                    color:
+                                                        c.selectedIndex.value ==
+                                                                index
+                                                            ? OPrimaryColor
+                                                            : Colors.black))),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 50),
                                         child: Center(
                                             child: OnHoverButton(
                                           child: AutoSizeText(
                                             c.tapbar[index],
-                                            style: GoogleFonts.nunito(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),
+                                            style: GoogleFonts.nunito(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.white),
                                             maxLines: 1,
                                           ),
                                         )
@@ -239,7 +258,9 @@ class _CustomAppbarState extends State<CustomAppbar> {
                                 child: Container(
                                   width: 67.66,
                                   height: 32,
-                                  decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(45)),
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(45)),
                                   padding: EdgeInsets.only(left: 4, right: 10),
                                   child: Row(
                                     children: [
@@ -247,7 +268,8 @@ class _CustomAppbarState extends State<CustomAppbar> {
                                         width: 20,
                                         height: 20,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(100),
+                                          borderRadius:
+                                              BorderRadius.circular(100),
                                           gradient: LinearGradient(
                                               colors: [
                                                 Colors.orange,
@@ -256,9 +278,16 @@ class _CustomAppbarState extends State<CustomAppbar> {
                                                 Colors.redAccent
                                                 //add more colors for gradient
                                               ],
-                                              begin: Alignment.topLeft, //begin of the gradient color
-                                              end: Alignment.bottomRight, //end of the gradient color
-                                              stops: [0, 0.2, 0.5, 0.8] //stops for individual color
+                                              begin: Alignment
+                                                  .topLeft, //begin of the gradient color
+                                              end: Alignment
+                                                  .bottomRight, //end of the gradient color
+                                              stops: [
+                                                0,
+                                                0.2,
+                                                0.5,
+                                                0.8
+                                              ] //stops for individual color
                                               //set the stops number equal to numbers of color
                                               ),
                                         ),
@@ -310,15 +339,27 @@ class MenuItem {
 }
 
 class MenuItems {
-  static const List<MenuItem> firstItems = [home, gastronomy, restaurant, culture, village, about];
+  static const List<MenuItem> firstItems = [
+    home,
+    gastronomy,
+    restaurant,
+    culture,
+    village,
+    about
+  ];
   static const List<MenuItem> secondItems = [profile];
 
   static const home = MenuItem(text: 'Home', icon: Icons.cottage_sharp);
-  static const gastronomy = MenuItem(text: 'Gastronomy', icon: Icons.local_restaurant_outlined);
-  static const restaurant = MenuItem(text: 'Restaurant', icon: Icons.soup_kitchen);
-  static const culture = MenuItem(text: 'Culture', icon: Icons.snowshoeing_rounded);
-  static const village = MenuItem(text: 'Village', icon: Icons.bungalow_rounded);
-  static const about = MenuItem(text: 'About', icon: Icons.announcement_outlined);
+  static const gastronomy =
+      MenuItem(text: 'Gastronomy', icon: Icons.local_restaurant_outlined);
+  static const restaurant =
+      MenuItem(text: 'Restaurant', icon: Icons.soup_kitchen);
+  static const culture =
+      MenuItem(text: 'Culture', icon: Icons.snowshoeing_rounded);
+  static const village =
+      MenuItem(text: 'Village', icon: Icons.bungalow_rounded);
+  static const about =
+      MenuItem(text: 'About', icon: Icons.announcement_outlined);
   static const profile = MenuItem(text: 'Profile', icon: Icons.person);
 
   static Widget buildItem(MenuItem item) {

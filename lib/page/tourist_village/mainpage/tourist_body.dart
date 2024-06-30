@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/animate.dart';
 import 'package:flutter_animate/effects/effects.dart';
 import 'package:flutter_animate/extensions/num_duration_extensions.dart';
+import 'package:gastronomy/api/api_service.dart';
+import 'package:gastronomy/model/village.dart';
 import 'package:gastronomy/page/culture/listpage/culture_list_page.dart';
 import 'package:gastronomy/page/gastronomy/gastronomy_page.dart';
 import 'package:gastronomy/page/tourist_village/detailpage/detail_tourist_village_page.dart';
+import 'package:gastronomy/page/tourist_village/mainpage/tourist_body_list_page.dart';
 import 'package:gastronomy/utils/ext_text.dart';
 import 'package:gastronomy/widget/animation/on_hover_button.dart';
 import 'package:gastronomy/widget/button/button_base.dart';
@@ -14,9 +17,14 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../utils/colors.dart';
 
 class TouristVillageBody extends StatelessWidget {
+  final Future<VillageData> futureVillages;
+
   const TouristVillageBody({
     Key? key,
+    required this.futureVillages,
   }) : super(key: key);
+
+  // Backend Program
 
   @override
   Widget build(BuildContext context) {
@@ -193,17 +201,45 @@ class TouristVillageBody extends StatelessWidget {
                           spacing: 50.0,
                           runSpacing: 50,
                           children: [
-                            ItemVillage(),
-                            ItemVillage(),
-                            ItemVillage(),
-                            ItemVillage(),
-                            ItemVillage(),
-                            ItemVillage(),
-                            ItemVillage(),
-                            ItemVillage(),
-                            ItemVillage(),
-                            ItemVillage(),
-                            ItemVillage(),
+                            // Ini Bagian ListView
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: Get.width / 1536 * 150),
+                              child: FutureBuilder<VillageData>(
+                                future: futureVillages,
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasData) {
+                                    List<Village> villages =
+                                        snapshot.data!.data;
+                                    return SizedBox(
+                                      height: 200,
+                                      child: ListView.builder(
+                                        scrollDirection: Axis.horizontal,
+                                        shrinkWrap: true,
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
+                                        itemCount: villages.length,
+                                        itemBuilder: (context, index) {
+                                          return Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              TouristBodyListPage(
+                                                  villages: villages[index]),
+                                              SizedBox(width: 20),
+                                            ],
+                                          );
+                                        },
+                                      ),
+                                    );
+                                  } else if (snapshot.hasError) {
+                                    return Text("${snapshot.error}");
+                                  }
+                                  return CircularProgressIndicator();
+                                },
+                              ),
+                            ),
+                            // Penutup Bagian ListView
                           ],
                         ),
                       )
@@ -214,49 +250,6 @@ class TouristVillageBody extends StatelessWidget {
               ]),
         // SizedBox(height: Get.height * 0.15),
       ],
-    );
-  }
-
-  Widget ItemVillage() {
-    return OnHoverButton(
-      child: GestureDetector(
-        onTap: () {
-          Get.to(DetailTouristVillagePage());
-        },
-        child: ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            child: Stack(
-              children: [
-                Container(
-                  width: 314.57,
-                  height: 200,
-                  child: FittedBox(
-                    child: Image.asset("assets/images/img_recipe_ayam.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Container(
-                  width: 314.57,
-                  height: 200,
-                  color: Colors.black.withOpacity(0.3),
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Desa Redut Tutubhahda").nunito15b().white(),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          "This location is a traditional village area which is the beiggest village in lombok",
-                          maxLines: 2,
-                        ).nunito10s().white(),
-                      ]),
-                )
-              ],
-            )),
-      ),
     );
   }
 }

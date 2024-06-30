@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter/scheduler.dart';
+import 'package:gastronomy/api/api_service.dart';
 import 'package:gastronomy/controller/global_controller.dart';
+import 'package:gastronomy/model/village.dart';
 import 'package:gastronomy/page/culture/mainpage/culture_body_four.dart';
 import 'package:gastronomy/page/culture/mainpage/culture_body_one.dart';
 import 'package:gastronomy/page/culture/mainpage/culture_body_three.dart';
@@ -24,6 +27,8 @@ class TouristVillagePage extends StatefulWidget {
 }
 
 class _TouristVillagePageState extends State<TouristVillagePage> {
+  late Future<VillageData> futureVillages;
+
   var c = Get.put(GlobalController());
   @override
   void initState() {
@@ -32,6 +37,7 @@ class _TouristVillagePageState extends State<TouristVillagePage> {
       c.selectedIndex.value = 4;
       print(c.selectedIndex.value);
     });
+    futureVillages = ApiService.fetchVillages();
   }
 
   @override
@@ -39,8 +45,8 @@ class _TouristVillagePageState extends State<TouristVillagePage> {
     return Scaffold(
         appBar: const CustomAppbar(),
         body: Stack(children: [
-          ListView(children: const [
-            TouristVillageBody(),
+          ListView(children: [
+            TouristVillageBody(futureVillages: futureVillages),
             Divider(),
             Divider(),
             FootBar()
