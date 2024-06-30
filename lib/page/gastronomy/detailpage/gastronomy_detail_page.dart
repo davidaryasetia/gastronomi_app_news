@@ -45,9 +45,26 @@ class _GastronomyDetailPageState extends State<GastronomyDetailPage> {
               children: [
                 BackgroundImage(),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: Get.width / 1536 * 82),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Get.width / 1536 * 82),
                   child: Column(
-                    children: [GastroDetailOne(), Divider(), GastroDetailTwo(index: widget.index), Divider(), GastroDetailThree(index: widget.index,), Divider(), GastroDetailFour(), Divider(), GastroDetailFive(), Divider(), GastroDetailSix(), Divider(), FootBar()],
+                    children: [
+                      GastroDetailOne(),
+                      Divider(),
+                      GastroDetailTwo(index: widget.index),
+                      Divider(),
+                      GastroDetailThree(
+                        index: widget.index,
+                      ),
+                      Divider(),
+                      GastroDetailFour(),
+                      Divider(),
+                      GastroDetailFive(),
+                      Divider(),
+                      GastroDetailSix(),
+                      Divider(),
+                      FootBar()
+                    ],
                   ),
                 )
               ],
@@ -83,11 +100,17 @@ class BackgroundImage extends StatelessWidget {
               textAlign: TextAlign.center,
               text: TextSpan(
                 text: 'This is The Perfect Time To Get a New Travel Experience',
-                style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralWhite),
+                style: GoogleFonts.orelegaOne(
+                    fontSize: 60,
+                    fontWeight: FontWeight.w400,
+                    color: ONetralWhite),
                 children: <TextSpan>[
                   TextSpan(
                     text: ' For You',
-                    style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                    style: GoogleFonts.orelegaOne(
+                        fontSize: 60,
+                        fontWeight: FontWeight.w400,
+                        color: OPrimaryColor),
                   ),
                 ],
               ),

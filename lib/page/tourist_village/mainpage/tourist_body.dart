@@ -44,12 +44,19 @@ class TouristVillageBody extends StatelessWidget {
                                 height: 100,
                                 child: RichText(
                                   text: TextSpan(
-                                    text: 'Explore Exciting Destinations Shrouded ',
-                                    style: GoogleFonts.orelegaOne(fontSize: 25, fontWeight: FontWeight.w400, color: ONetralBlack),
+                                    text:
+                                        'Explore Exciting Destinations Shrouded ',
+                                    style: GoogleFonts.orelegaOne(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.w400,
+                                        color: ONetralBlack),
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: 'Nusa Tenggara',
-                                        style: GoogleFonts.orelegaOne(fontSize: 25, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                        style: GoogleFonts.orelegaOne(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w400,
+                                            color: OPrimaryColor),
                                       ),
                                     ],
                                   ),
@@ -58,7 +65,8 @@ class TouristVillageBody extends StatelessWidget {
                               Container(
                                 width: 400,
                                 height: 150,
-                                child: const Text("Lombok Island has a variety of unique customs and ceremonies that can give you something new..")
+                                child: const Text(
+                                        "Lombok Island has a variety of unique customs and ceremonies that can give you something new..")
                                     .nunito15b()
                                     .black()
                                     .animate()
@@ -107,7 +115,8 @@ class TouristVillageBody extends StatelessWidget {
                             width: Get.width,
                             height: 400,
                             child: FittedBox(
-                              child: Image.asset('assets/images/img_bg_village.png'),
+                              child: Image.asset(
+                                  'assets/images/img_bg_village.png'),
                               fit: BoxFit.fill,
                             )),
                         Container(
@@ -121,12 +130,19 @@ class TouristVillageBody extends StatelessWidget {
                               child: RichText(
                                 textAlign: TextAlign.center,
                                 text: TextSpan(
-                                  text: 'Explore Exciting Destinations Shrouded',
-                                  style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralWhite),
+                                  text:
+                                      'Explore Exciting Destinations Shrouded',
+                                  style: GoogleFonts.orelegaOne(
+                                      fontSize: 60,
+                                      fontWeight: FontWeight.w400,
+                                      color: ONetralWhite),
                                   children: <TextSpan>[
                                     TextSpan(
                                       text: ' Nusa Tenggara',
-                                      style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                      style: GoogleFonts.orelegaOne(
+                                          fontSize: 60,
+                                          fontWeight: FontWeight.w400,
+                                          color: OPrimaryColor),
                                     ),
                                   ],
                                 ),
@@ -150,11 +166,17 @@ class TouristVillageBody extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   text: TextSpan(
                                     text: 'Find Wonderful',
-                                    style: GoogleFonts.orelegaOne(fontSize: 55, fontWeight: FontWeight.w400, color: ONetralBlack),
+                                    style: GoogleFonts.orelegaOne(
+                                        fontSize: 55,
+                                        fontWeight: FontWeight.w400,
+                                        color: ONetralBlack),
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: ' Village',
-                                        style: GoogleFonts.orelegaOne(fontSize: 55, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                        style: GoogleFonts.orelegaOne(
+                                            fontSize: 55,
+                                            fontWeight: FontWeight.w400,
+                                            color: OPrimaryColor),
                                       ),
                                     ],
                                   ),
@@ -218,16 +240,19 @@ class TouristVillageBody extends StatelessWidget {
                   height: 200,
                   color: Colors.black.withOpacity(0.3),
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text("Desa Redut Tutubhahda").nunito15b().white(),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "This location is a traditional village area which is the beiggest village in lombok",
-                      maxLines: 2,
-                    ).nunito10s().white(),
-                  ]),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Desa Redut Tutubhahda").nunito15b().white(),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "This location is a traditional village area which is the beiggest village in lombok",
+                          maxLines: 2,
+                        ).nunito10s().white(),
+                      ]),
                 )
               ],
             )),

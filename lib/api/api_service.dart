@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:gastronomy/model/culture.dart';
+import 'package:gastronomy/model/food.dart';
+import 'package:gastronomy/model/village.dart';
 import 'package:http/http.dart' as http;
 import '../model/restaurant.dart';
 
@@ -28,6 +30,30 @@ class ApiService {
       return CultureData.fromJson(response.body);
     } else {
       throw Exception('Failed To Load Data Culture');
+    }
+  }
+
+  static Future<FoodData> fetchFoods() async {
+    final response = await http.get(Uri.parse('$baseUrl/food'), headers: {
+      'Accept': 'application/json',
+    });
+
+    if (response.statusCode == 200) {
+      return FoodData.fromJson(response.body);
+    } else {
+      throw Exception('Failed To Load Data Food');
+    }
+  }
+
+  static Future<VillageData> fetchVillages() async {
+    final response = await http.get(Uri.parse('$baseUrl/village'), headers: {
+      'Accept': 'application/json',
+    });
+
+    if (response.statusCode == 200) {
+      return VillageData.fromJson(response.body);
+    } else {
+      throw Exception('Failed To Load Data Vilage');
     }
   }
 }
