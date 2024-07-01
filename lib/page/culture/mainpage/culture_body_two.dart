@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/animate.dart';
 import 'package:flutter_animate/effects/effects.dart';
 import 'package:flutter_animate/extensions/num_duration_extensions.dart';
+import 'package:gastronomy/api/api_service.dart';
+import 'package:gastronomy/model/culture.dart';
+import 'package:gastronomy/page/culture/mainpage/culture_body_two_card.dart';
 import 'package:gastronomy/page/gastronomy/gastronomy_page.dart';
 import 'package:gastronomy/utils/ext_text.dart';
 import 'package:gastronomy/widget/animation/on_hover_button.dart';
@@ -25,11 +28,15 @@ class CultureBodyTwo extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: 'Common  ',
-            style: GoogleFonts.orelegaOne(fontSize: 50, fontWeight: FontWeight.w400, color: ONetralBlack),
+            style: GoogleFonts.orelegaOne(
+                fontSize: 50, fontWeight: FontWeight.w400, color: ONetralBlack),
             children: <TextSpan>[
               TextSpan(
                 text: 'Ceremonies',
-                style: GoogleFonts.orelegaOne(fontSize: 50, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                style: GoogleFonts.orelegaOne(
+                    fontSize: 50,
+                    fontWeight: FontWeight.w400,
+                    color: OPrimaryColor),
               ),
             ],
           ),
@@ -37,24 +44,55 @@ class CultureBodyTwo extends StatelessWidget {
         const SizedBox(
           height: 40,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 100),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ItemList(),
-              SizedBox(
-                width: 50,
-              ),
-              ItemList(),
-              SizedBox(
-                width: 50,
-              ),
-              ItemList(),
-            ],
-          ),
-        ),
+        CultureBodyTwoCard(),
+        // Belum Fix
+        // Padding(
+        //   padding: EdgeInsets.symmetric(horizontal: 100),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.center,
+        //     crossAxisAlignment: CrossAxisAlignment.center,
+        //     children: [
+        //       FutureBuilder<CultureData>(
+        //         future: ApiService.fetchCultures(),
+        //         builder: (context, snapshot) {
+        //           if (snapshot.connectionState == ConnectionState.waiting) {
+        //             return Center(
+        //               child: CircularProgressIndicator(),
+        //             );
+        //           } else if (snapshot.hasError) {
+        //             return Center(
+        //               child: Text('Error: ${snapshot.error}'),
+        //             );
+        //           } else if (snapshot.hasData &&
+        //               snapshot.data!.data.isNotEmpty) {
+        //             final cultures = snapshot.data!.data;
+        //             return ListView.builder(
+        //               scrollDirection: Axis.horizontal,
+        //               shrinkWrap: true,
+        //               physics: const NeverScrollableScrollPhysics(),
+        //               itemCount: cultures.length,
+        //               itemBuilder: (context, index) {
+        //                 return CultureBodyTwoCard(culture: cultures[index]);
+        //               },
+        //             );
+        //           } else {
+        //             return Center(
+        //               child: Text('No Data Available'),
+        //             );
+        //           }
+        //         },
+        //       ),
+
+        //       // Staart Here
+
+        //       // End Here
+        //       SizedBox(
+        //         width: 50,
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // Belum Fix
         const SizedBox(
           height: 40,
         ),
@@ -117,7 +155,8 @@ class ItemList extends StatelessWidget {
                   Container(
                     width: 18,
                     height: 18,
-                    decoration: BoxDecoration(color: OGoodGreen, shape: BoxShape.circle),
+                    decoration: BoxDecoration(
+                        color: OGoodGreen, shape: BoxShape.circle),
                     child: Icon(
                       Icons.check,
                       color: Colors.white,

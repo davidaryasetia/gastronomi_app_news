@@ -38,7 +38,17 @@ class _CulturePageState extends State<CulturePage> {
     return Scaffold(
         appBar: const CustomAppbar(),
         body: Stack(children: [
-          ListView(children: const [CultureBodyOne(), Divider(), CultureBodyTwo(), Divider(), CultureBodyThree(), Divider(), CultureBodyFour(), Divider(), FootBar()]),
+          ListView(children: [
+            CultureBodyOne(),
+            Divider(),
+            CultureBodyTwo(),
+            Divider(),
+            CultureBodyThree(),
+            Divider(),
+            CultureBodyFour(),
+            Divider(),
+            FootBar()
+          ]),
           CustomChatbot(),
         ])
         // HomeBody(),

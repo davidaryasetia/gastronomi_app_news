@@ -13,9 +13,21 @@ class CultureData {
 
   String toJson() => json.encode(toMap());
 
-  factory CultureData.fromMap(Map<String, dynamic> json) => CultureData(
+  // Fungsi factory untuk membuat instance dari Map
+  factory CultureData.fromMap(Map<String, dynamic> json) {
+    // Memeriksa apakah 'data' adalah daftar (List) atau objek tunggal (Map)
+    if (json['data'] is List) {
+      return CultureData(
         data: List<Culture>.from(json["data"].map((x) => Culture.fromMap(x))),
       );
+    } else if (json['data'] is Map) {
+      return CultureData(
+        data: [Culture.fromMap(json['data'])],
+      );
+    } else {
+      throw Exception('Unexpected data format');
+    }
+  }
 
   Map<String, dynamic> toMap() => {
         "data": List<dynamic>.from(data.map((x) => x.toMap())),

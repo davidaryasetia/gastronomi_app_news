@@ -18,7 +18,7 @@ class CultureBodyListPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 80),
           child: GestureDetector(
             onTap: () {
-              Get.to(CultureDetailPage());
+              Get.to(CultureDetailPage(culturesId: culture.cultureId));
             },
             child: OnHoverButton(
               child: Column(

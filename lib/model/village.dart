@@ -16,9 +16,20 @@ class VillageData {
   String toJson() => json.encode(toMap());
 
   // Factory method to create VillageData from Map
-  factory VillageData.fromMap(Map<String, dynamic> json) => VillageData(
+  factory VillageData.fromMap(Map<String, dynamic> json) {
+    // Check if 'data' is a list or a single object
+    if (json['data'] is List) {
+      return VillageData(
         data: List<Village>.from(json["data"].map((x) => Village.fromMap(x))),
       );
+    } else if (json['data'] is Map) {
+      return VillageData(
+        data: [Village.fromMap(json['data'])],
+      );
+    } else {
+      throw Exception('Unexpected data format');
+    }
+  }
 
   // Method to convert VillageData to Map
   Map<String, dynamic> toMap() => {

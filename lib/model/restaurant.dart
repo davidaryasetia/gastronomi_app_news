@@ -14,10 +14,21 @@ class RestaurantData {
 
   String toJson() => json.encode(toMap());
 
-  factory RestaurantData.fromMap(Map<String, dynamic> json) => RestaurantData(
+  factory RestaurantData.fromMap(Map<String, dynamic> json) {
+    // Check if 'data' is a list or a single object
+    if (json['data'] is List) {
+      return RestaurantData(
         data: List<Restaurant>.from(
             json["data"].map((x) => Restaurant.fromMap(x))),
       );
+    } else if (json['data'] is Map) {
+      return RestaurantData(
+        data: [Restaurant.fromMap(json['data'])],
+      );
+    } else {
+      throw Exception('Unexpected data format');
+    }
+  }
 
   Map<String, dynamic> toMap() => {
         "data": List<dynamic>.from(data.map((x) => x.toMap())),

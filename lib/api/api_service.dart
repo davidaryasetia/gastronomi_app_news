@@ -9,6 +9,7 @@ import '../model/restaurant.dart';
 class ApiService {
   static const String baseUrl = 'https://admin-gastronomi.projectbase.site/api';
 
+  // Restaurant
   static Future<RestaurantData> fetchRestaurants() async {
     final response = await http.get(Uri.parse('$baseUrl/restaurant'), headers: {
       'Accept': 'application/json',
@@ -34,6 +35,7 @@ class ApiService {
     }
   }
 
+  // Culture
   static Future<CultureData> fetchCultures() async {
     final response = await http.get(Uri.parse('$baseUrl/culture'), headers: {
       'Accept': 'application/json',
@@ -43,6 +45,19 @@ class ApiService {
       return CultureData.fromJson(response.body);
     } else {
       throw Exception('Failed To Load Data Culture');
+    }
+  }
+
+  static Future<CultureData> fetchCultureById(int id) async {
+    final response =
+        await http.get(Uri.parse('$baseUrl/culture/$id'), headers: {
+      'Accept': 'application/json',
+    });
+
+    if (response.statusCode == 200) {
+      return CultureData.fromJson(response.body);
+    } else {
+      throw Exception('Failed to load cultures');
     }
   }
 
@@ -58,6 +73,7 @@ class ApiService {
     }
   }
 
+  // Tourist Village Destination
   static Future<VillageData> fetchVillages() async {
     final response = await http.get(Uri.parse('$baseUrl/village'), headers: {
       'Accept': 'application/json',

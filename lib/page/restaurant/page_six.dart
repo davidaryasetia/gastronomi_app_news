@@ -12,7 +12,11 @@ import '../../utils/colors.dart';
 
 class PageOne extends StatelessWidget {
   PageOne({super.key});
-  final List<String> restaurants = <String>['Restaurant Plecik Kangkung', 'Restaurant Ayam Taliwang', 'Restaurant Sate Bulayak'];
+  final List<String> restaurants = <String>[
+    'Restaurant Plecik Kangkung',
+    'Restaurant Ayam Taliwang',
+    'Restaurant Sate Bulayak'
+  ];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,7 +34,10 @@ class PageOne extends StatelessWidget {
           children: [
             const Expanded(
               flex: 1,
-              child: CustomRoundedImage(image: "assets/images/img_recipe_ayam.png", outlineRounded: 20, height: 280),
+              child: CustomRoundedImage(
+                  image: "assets/images/img_recipe_ayam.png",
+                  outlineRounded: 20,
+                  height: 280),
             ),
             const SizedBox(width: 35),
             Expanded(
@@ -116,13 +123,15 @@ class ListItem extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Get.to(RestaurantDetailPage());
+              // Get.to(RestaurantDetailPage());
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 35, vertical: 27),
               width: Get.width,
               height: 250,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.grey)),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.grey)),
               child: Column(
                 children: [
                   Row(
@@ -135,7 +144,8 @@ class ListItem extends StatelessWidget {
                           width: 259,
                           height: 180,
                           child: FittedBox(
-                            child: Image.asset("assets/images/img_recipe_ayam.png"),
+                            child: Image.asset(
+                                "assets/images/img_recipe_ayam.png"),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -151,7 +161,9 @@ class ListItem extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const Text("Restaurant Pelecik Kangkung").nunito25eb().black(),
+                                const Text("Restaurant Pelecik Kangkung")
+                                    .nunito25eb()
+                                    .black(),
                                 Image.asset("assets/images/9star.png"),
                               ],
                             ),
@@ -160,11 +172,15 @@ class ListItem extends StatelessWidget {
                               children: [
                                 Row(
                                   children: [
-                                    Image.asset("assets/images/ic_location_primary.png"),
+                                    Image.asset(
+                                        "assets/images/ic_location_primary.png"),
                                     SizedBox(
                                       width: 8,
                                     ),
-                                    const Text("Labuan Mapin, Kec. Alas Bar., Kabupaten Sumbawa, Nusa Tenggara Bar. 84454").nunito18s().primary(),
+                                    const Text(
+                                            "Labuan Mapin, Kec. Alas Bar., Kabupaten Sumbawa, Nusa Tenggara Bar. 84454")
+                                        .nunito18s()
+                                        .primary(),
                                   ],
                                 ),
                               ],

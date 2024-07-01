@@ -30,7 +30,9 @@ class RestaurantBodyListPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: GestureDetector(
                 onTap: () {
-                  Get.to(RestaurantDetailPage());
+                  Get.to(RestaurantDetailPage(
+                    restaurantId: restaurant.restaurantId,
+                  ));
                 },
                 child: Column(
                   children: [
