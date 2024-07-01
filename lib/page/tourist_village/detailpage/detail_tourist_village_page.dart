@@ -19,7 +19,8 @@ class DetailTouristVillagePage extends StatefulWidget {
   const DetailTouristVillagePage({super.key});
 
   @override
-  State<DetailTouristVillagePage> createState() => _DetailTouristVillagePageState();
+  State<DetailTouristVillagePage> createState() =>
+      _DetailTouristVillagePageState();
 }
 
 class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
@@ -61,19 +62,27 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                 Expanded(
                                   flex: 2,
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         width: 200,
                                         height: 100,
                                         child: RichText(
                                           text: TextSpan(
-                                            text: 'Explore Exciting Destinations Shrouded ',
-                                            style: GoogleFonts.orelegaOne(fontSize: 25, fontWeight: FontWeight.w400, color: ONetralBlack),
+                                            text:
+                                                'Explore Exciting Destinations Shrouded ',
+                                            style: GoogleFonts.orelegaOne(
+                                                fontSize: 25,
+                                                fontWeight: FontWeight.w400,
+                                                color: ONetralBlack),
                                             children: <TextSpan>[
                                               TextSpan(
                                                 text: 'Nusa Tenggara',
-                                                style: GoogleFonts.orelegaOne(fontSize: 25, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                                style: GoogleFonts.orelegaOne(
+                                                    fontSize: 25,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: OPrimaryColor),
                                               ),
                                             ],
                                           ),
@@ -82,11 +91,13 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                       Container(
                                         width: 400,
                                         height: 150,
-                                        child: const Text("Lombok Island has a variety of unique customs and ceremonies that can give you something new..")
+                                        child: const Text(
+                                                "Lombok Island has a variety of unique customs and ceremonies that can give you something new..")
                                             .nunito15b()
                                             .black()
                                             .animate()
-                                            .fadeIn(delay: 300.ms, duration: 500.ms)
+                                            .fadeIn(
+                                                delay: 300.ms, duration: 500.ms)
                                             .then() // sets own delay to 800ms (300+500)
                                             .slide(duration: 400.ms),
                                       ),
@@ -111,10 +122,13 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                 Expanded(
                                     flex: 1,
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Image.asset("assets/images/img_bg_village.png"),
+                                        Image.asset(
+                                            "assets/images/img_bg_village.png"),
                                       ],
                                     )),
                               ],
@@ -131,7 +145,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     width: Get.width,
                                     height: 400,
                                     child: FittedBox(
-                                      child: Image.asset('assets/images/img_bg_village.png'),
+                                      child: Image.asset(
+                                          'assets/images/img_bg_village.png'),
                                       fit: BoxFit.fill,
                                     )),
                                 Container(
@@ -146,19 +161,31 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                         textAlign: TextAlign.center,
                                         text: TextSpan(
                                           text: 'Lombok has a variety of',
-                                          style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralWhite),
+                                          style: GoogleFonts.orelegaOne(
+                                              fontSize: 60,
+                                              fontWeight: FontWeight.w400,
+                                              color: ONetralWhite),
                                           children: <TextSpan>[
                                             TextSpan(
                                               text: ' Cultures',
-                                              style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                              style: GoogleFonts.orelegaOne(
+                                                  fontSize: 60,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: OPrimaryColor),
                                             ),
                                             TextSpan(
                                               text: ' and',
-                                              style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: ONetralWhite),
+                                              style: GoogleFonts.orelegaOne(
+                                                  fontSize: 60,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: ONetralWhite),
                                             ),
                                             TextSpan(
                                               text: ' Tradition',
-                                              style: GoogleFonts.orelegaOne(fontSize: 60, fontWeight: FontWeight.w400, color: OPrimaryColor),
+                                              style: GoogleFonts.orelegaOne(
+                                                  fontSize: 60,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: OPrimaryColor),
                                             ),
                                           ],
                                         ),
@@ -169,12 +196,15 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                               ]),
                               SizedBox(height: 40),
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 80.0),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 80.0),
                                 child: Column(
                                   children: [
                                     Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         BaseButton(
                                           ontap: () {},
@@ -203,7 +233,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 40),
                                     Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Desa. Rendut Tutubhada",
@@ -212,7 +243,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 30),
                                     Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Waktu Operasional",
@@ -223,11 +255,19 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     Container(
                                       height: 110,
                                       width: Get.width,
-                                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                                      decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(16)), color: ONetralWhite, border: Border.all(color: ONetralBlack)),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 30, vertical: 10),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(16)),
+                                          color: ONetralWhite,
+                                          border:
+                                              Border.all(color: ONetralBlack)),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             "Sekarang Buka",
@@ -243,7 +283,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 40),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Village Profile",
@@ -270,18 +311,23 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 80.0),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 80.0),
                                 child: Column(
                                   children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Expanded(
                                           flex: 1,
                                           child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
                                                 "Description",
@@ -305,7 +351,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                                 height: 50,
                                               ),
                                               ClipRRect(
-                                                borderRadius: BorderRadius.circular(40),
+                                                borderRadius:
+                                                    BorderRadius.circular(40),
                                                 child: YoutubePlayerScaffold(
                                                   controller: _controller,
                                                   aspectRatio: 5 / 5,
@@ -326,7 +373,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 30),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           "location",
@@ -335,7 +383,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 16),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Desa. Rendut Tutubhada, Nusa Tenggara Timur, Kabupaten/ Kota. Nagekeo, Kecamatan Aesesa",
@@ -344,12 +393,14 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 20),
                                     ClipRRect(
-                                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(20)),
                                       child: Container(
                                         width: Get.width,
                                         height: 400,
                                         child: FittedBox(
-                                          child: Image.asset("assets/images/img_lombok_island.png"),
+                                          child: Image.asset(
+                                              "assets/images/img_lombok_island.png"),
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -357,7 +408,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     SizedBox(height: 20),
                                     OnHoverButton(
                                       child: BaseButton(
-                                        ontap: () => _launchUrl('https://pub.dev/packages/url_launcher'),
+                                        ontap: () => _launchUrl(
+                                            'https://pub.dev/packages/url_launcher'),
                                         color: OGoodGreen,
                                         height: 40,
                                         width: Get.width,
@@ -372,7 +424,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 40),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Fasilitas",
@@ -381,7 +434,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 20),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Expanded(
                                           flex: 1,
@@ -394,7 +448,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 40),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Kontak",
@@ -403,22 +458,34 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 20),
                                     Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Expanded(
                                           flex: 1,
                                           child: OnHoverButton(
                                             child: Container(
                                               height: 125,
-                                              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                                              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20)), border: Border.all(color: ONetralBlack)),
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 30, vertical: 20),
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(20)),
+                                                  border: Border.all(
+                                                      color: ONetralBlack)),
                                               child: Column(
-                                                mainAxisAlignment: MainAxisAlignment.start,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Row(
-                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
                                                     children: [
                                                       Text(
                                                         "Kontak",
@@ -442,19 +509,30 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                           child: OnHoverButton(
                                             child: Container(
                                               height: 125,
-                                              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                                              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20)), border: Border.all(color: ONetralBlack)),
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 30, vertical: 20),
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(20)),
+                                                  border: Border.all(
+                                                      color: ONetralBlack)),
                                               child: Column(
-                                                mainAxisAlignment: MainAxisAlignment.start,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Row(
-                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
                                                     children: [
                                                       Text(
                                                         "Kunjungi",
                                                       ).nunito30s(),
-                                                      Icon(Icons.call_missed_outgoing_outlined)
+                                                      Icon(Icons
+                                                          .call_missed_outgoing_outlined)
                                                     ],
                                                   ),
                                                   Text(
@@ -469,7 +547,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 20),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Media Sosial",
@@ -479,15 +558,21 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     SizedBox(height: 20),
                                     Container(
                                       height: 40,
-                                      decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.grey))),
+                                      decoration: BoxDecoration(
+                                          border: Border(
+                                              bottom: BorderSide(
+                                                  color: Colors.grey))),
                                       child: Column(
                                         children: [
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Row(
-                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
                                                 children: [
                                                   Icon(
                                                     Icons.facebook,
@@ -513,15 +598,21 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     SizedBox(height: 20),
                                     Container(
                                       height: 40,
-                                      decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.grey))),
+                                      decoration: BoxDecoration(
+                                          border: Border(
+                                              bottom: BorderSide(
+                                                  color: Colors.grey))),
                                       child: Column(
                                         children: [
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Row(
-                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
                                                 children: [
                                                   Icon(
                                                     Icons.facebook,
@@ -547,15 +638,21 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     SizedBox(height: 20),
                                     Container(
                                       height: 40,
-                                      decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.grey))),
+                                      decoration: BoxDecoration(
+                                          border: Border(
+                                              bottom: BorderSide(
+                                                  color: Colors.grey))),
                                       child: Column(
                                         children: [
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Row(
-                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
                                                 children: [
                                                   Icon(
                                                     Icons.facebook,
@@ -580,7 +677,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 20),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Mandatory Equipment",
@@ -589,7 +687,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                     ),
                                     SizedBox(height: 20),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Expanded(
                                           flex: 1,
@@ -652,16 +751,19 @@ Widget ItemVillage() {
                 width: Get.width * 1 / 3 - 80,
                 color: Colors.black.withOpacity(0.3),
                 padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text("Desa Redut Tutubhahda").nunito15b().white(),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    "This location is a traditional village area which is the beiggest village in lombok",
-                    maxLines: 2,
-                  ).nunito10s().white(),
-                ]),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Desa Redut Tutubhahda").nunito15b().white(),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "This location is a traditional village area which is the beiggest village in lombok",
+                        maxLines: 2,
+                      ).nunito10s().white(),
+                    ]),
               )
             ],
           )),
