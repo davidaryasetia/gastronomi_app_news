@@ -195,6 +195,8 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                 )
                               ]),
                               SizedBox(height: 40),
+
+                              // Layout 1
                               Padding(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 80.0),
@@ -310,6 +312,9 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                   ],
                                 ),
                               ),
+                              // End Layout 1
+
+                              // Layout 2
                               Padding(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 80.0),

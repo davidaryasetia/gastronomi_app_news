@@ -85,4 +85,17 @@ class ApiService {
       throw Exception('Failed To Load Data Vilage');
     }
   }
+
+  static Future<VillageData> fetchVillageById(int id) async {
+    final response =
+        await http.get(Uri.parse('$baseUrl/village/$id'), headers: {
+      'Accept': 'application/json',
+    });
+
+    if (response.statusCode == 200) {
+      return VillageData.fromJson(response.body);
+    } else {
+      throw Exception('Failed To Load Data Village');
+    }
+  }
 }
