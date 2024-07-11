@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+// Model for FoodData
 class FoodData {
   FoodData({
     required this.data,
@@ -7,19 +8,44 @@ class FoodData {
 
   List<Food> data;
 
+  // Factory method to create FoodData from JSON string
   factory FoodData.fromJson(String str) => FoodData.fromMap(json.decode(str));
 
+  // Method to convert FoodData to JSON string
   String toJson() => json.encode(toMap());
 
-  factory FoodData.fromMap(Map<String, dynamic> json) => FoodData(
+  // Factory method to create FoodData from Map
+  factory FoodData.fromMap(Map<String, dynamic> json) {
+    // Check if 'data' is a list or a single object
+    if (json['data'] is List) {
+      return FoodData(
         data: List<Food>.from(json["data"].map((x) => Food.fromMap(x))),
       );
+    } else if (json['data'] is Map) {
+      return FoodData(
+        data: [Food.fromMap(json['data'])],
+      );
+    } else {
+      throw Exception('Unexpected data format');
+    }
+  }
 
+  // Method to convert FoodData to Map
   Map<String, dynamic> toMap() => {
         "data": List<dynamic>.from(data.map((x) => x.toMap())),
       };
+
+  // Method to get Food by ID
+  Food? getFoodById(int id) {
+    try {
+      return data.firstWhere((food) => food.foodId == id);
+    } catch (e) {
+      return null; // Return null if no food with the given ID is found
+    }
+  }
 }
 
+// Model for Food
 class Food {
   Food({
     required this.foodId,
@@ -51,10 +77,13 @@ class Food {
   DateTime updatedAt;
   List<FoodPhoto> photos;
 
+  // Factory method to create Food from JSON string
   factory Food.fromJson(String str) => Food.fromMap(json.decode(str));
 
+  // Method to convert Food to JSON string
   String toJson() => json.encode(toMap());
 
+  // Factory method to create Food from Map
   factory Food.fromMap(Map<String, dynamic> json) => Food(
         foodId: json["food_id"],
         name: json["name"],
@@ -72,6 +101,7 @@ class Food {
             json["photos"].map((x) => FoodPhoto.fromMap(x))),
       );
 
+  // Method to convert Food to Map
   Map<String, dynamic> toMap() => {
         "food_id": foodId,
         "name": name,
@@ -89,6 +119,7 @@ class Food {
       };
 }
 
+// Model for FoodPhoto
 class FoodPhoto {
   FoodPhoto({
     required this.foodHistoricalPhotoId,
@@ -98,15 +129,19 @@ class FoodPhoto {
   int foodHistoricalPhotoId;
   String photo;
 
+  // Factory method to create FoodPhoto from JSON string
   factory FoodPhoto.fromJson(String str) => FoodPhoto.fromMap(json.decode(str));
 
+  // Method to convert FoodPhoto to JSON string
   String toJson() => json.encode(toMap());
 
+  // Factory method to create FoodPhoto from Map
   factory FoodPhoto.fromMap(Map<String, dynamic> json) => FoodPhoto(
         foodHistoricalPhotoId: json["food_historical_photo_id"],
         photo: json["photo"],
       );
 
+  // Method to convert FoodPhoto to Map
   Map<String, dynamic> toMap() => {
         "food_historical_photo_id": foodHistoricalPhotoId,
         "photo": photo,

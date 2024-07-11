@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:gastronomy/api/api_service.dart';
 import 'package:gastronomy/controller/global_controller.dart';
+import 'package:gastronomy/model/village.dart';
 import 'package:gastronomy/page/tourist_village/mainpage/tourist_body.dart';
 import 'package:gastronomy/utils/colors.dart';
 import 'package:gastronomy/utils/ext_text.dart';
@@ -10,13 +12,16 @@ import 'package:gastronomy/widget/button/button_base.dart';
 import 'package:gastronomy/widget/custom/custom_appbar.dart';
 import 'package:gastronomy/widget/custom/custom_chatbot.dart';
 import 'package:gastronomy/widget/custom/custom_footbar.dart';
+import 'package:gastronomy/widget/custom/custom_rounded_image.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class DetailTouristVillagePage extends StatefulWidget {
-  const DetailTouristVillagePage({super.key});
+  final int villagesId;
+
+  const DetailTouristVillagePage({super.key, required this.villagesId});
 
   @override
   State<DetailTouristVillagePage> createState() =>
@@ -195,518 +200,609 @@ class _DetailTouristVillagePageState extends State<DetailTouristVillagePage> {
                                 )
                               ]),
                               SizedBox(height: 40),
-
-                              // Layout 1
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 80.0),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                              FutureBuilder<VillageData>(
+                                future: ApiService.fetchVillageById(
+                                    widget.villagesId),
+                                builder: (context, snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return Center(
+                                      child: CircularProgressIndicator(),
+                                    );
+                                  } else if (snapshot.hasError) {
+                                    return Center(
+                                      child: Text('Error: ${snapshot.error}'),
+                                    );
+                                  } else if (snapshot.hasData &&
+                                      snapshot.data!.data.isNotEmpty) {
+                                    Village village = snapshot.data!.data.first;
+                                    return Column(
                                       children: [
-                                        BaseButton(
-                                          ontap: () {},
-                                          color: Color(0xffE8E8E8),
-                                          height: 40,
-                                          width: 136,
-                                          text: "Tourist Village",
-                                          outlineRadius: 8,
-                                          textColor: ONetralBlack,
-                                          textSize: 16,
-                                          textWeight: FontWeight.w600,
-                                        ),
-                                        BaseButton(
-                                          ontap: () {},
-                                          color: Color(0xffE8E8E8),
-                                          height: 40,
-                                          width: 117,
-                                          icon: Icons.share,
-                                          text: "Share",
-                                          outlineRadius: 10,
-                                          textColor: ONetralBlack,
-                                          textSize: 16,
-                                          textWeight: FontWeight.w600,
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(height: 40),
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Desa. Rendut Tutubhada",
-                                        ).orelega40s(),
-                                      ],
-                                    ),
-                                    SizedBox(height: 30),
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Waktu Operasional",
-                                        ).orelega40s(),
-                                      ],
-                                    ),
-                                    SizedBox(height: 16),
-                                    Container(
-                                      height: 110,
-                                      width: Get.width,
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 30, vertical: 10),
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(16)),
-                                          color: ONetralWhite,
-                                          border:
-                                              Border.all(color: ONetralBlack)),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "Sekarang Buka",
-                                          ).nunito30m().greenSmooth(),
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text(
-                                            "08:00 - 16:00",
-                                          ).nunito30m(),
-                                        ],
-                                      ),
-                                    ),
-                                    SizedBox(height: 40),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Village Profile",
-                                        ).orelega30s(),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(40),
-                                child: Wrap(
-                                  direction: Axis.horizontal,
-                                  spacing: 50.0,
-                                  runSpacing: 50,
-                                  children: [
-                                    ItemVillage(),
-                                    ItemVillage(),
-                                    ItemVillage(),
-                                    ItemVillage(),
-                                    ItemVillage(),
-                                    ItemVillage(),
-                                  ],
-                                ),
-                              ),
-                              // End Layout 1
-
-                              // Layout 2
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 80.0),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Expanded(
-                                          flex: 1,
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                "Description",
-                                              ).orelega30s(),
-                                              SizedBox(height: 16),
-                                              Text(
-                                                "The village is laid out in such a way, where the village area (which is also used as a traditional boxing arena) is made elongated in a rectangular shape from north to south. This area is limited by the installation of piles of stones in such a way that functions as a barrier. Traditional houses are built around the village area facing the center. The main house of this village is built on the north side facing the village entrance. In the village area there are several graves, one of which is the ancestral grave which is considered to unify the village, which was built right in front of the main traditional house. This location is a traditional village area in which there are traditional houses, offering stones and areas/land for carrying out traditional traditions in the form of traditional boxing processions as an overflow of gratitude for the harvest. The village is laid out in such a way, where the village area (which is also used as a traditional boxing arena) is made elongated in a rectangular shape from north to south. This area is limited by the installation of piles of stones in such a way that functions as a barrier. Traditional houses are built around the village area facing the center. The main house of this village is built on the north side facing the village entrance. In the village area there are several graves, one of which is the ancestral grave which is considered to unify the village, which was built right in front of the main traditional house. This location is a traditional village area in which there are traditional houses, offering stones and areas/land for carrying out traditional traditions in the form of traditional boxing processions as an overflow of gratitude for the harvest. The village is laid out in such a way, where the village area (which is also used as a traditional boxing arena) is made elongated in a rectangular shape from north to south. This area is limited by the installation of piles of stones in such a way that functions as a barrier. Traditional houses are built around the village area facing the center. The main house of this village is built on the north side facing the village entrance. In the village area there are several graves, one of which is the ancestral grave which is considered to unify the village, which was built right in front of the main traditional house.",
-                                                textAlign: TextAlign.justify,
-                                              ).nunito20s().black(),
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 20,
-                                        ),
-                                        Expanded(
-                                          flex: 1,
+                                        // Layout 1
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 80.0),
                                           child: Column(
                                             children: [
-                                              SizedBox(
-                                                height: 50,
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  BaseButton(
+                                                    ontap: () {},
+                                                    color: Color(0xffE8E8E8),
+                                                    height: 40,
+                                                    width: 136,
+                                                    text: "Tourist Village",
+                                                    outlineRadius: 8,
+                                                    textColor: ONetralBlack,
+                                                    textSize: 16,
+                                                    textWeight: FontWeight.w600,
+                                                  ),
+                                                  BaseButton(
+                                                    ontap: () {},
+                                                    color: Color(0xffE8E8E8),
+                                                    height: 40,
+                                                    width: 117,
+                                                    icon: Icons.share,
+                                                    text: "Share",
+                                                    outlineRadius: 10,
+                                                    textColor: ONetralBlack,
+                                                    textSize: 16,
+                                                    textWeight: FontWeight.w600,
+                                                  )
+                                                ],
                                               ),
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                child: YoutubePlayerScaffold(
-                                                  controller: _controller,
-                                                  aspectRatio: 5 / 5,
-                                                  builder: (context, player) {
-                                                    return Column(
-                                                      children: [
-                                                        player,
-                                                        // Text('Youtube Player'),
-                                                      ],
-                                                    );
-                                                  },
+                                              SizedBox(height: 40),
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    village.nameVillage,
+                                                  ).orelega40s(),
+                                                ],
+                                              ),
+                                              SizedBox(height: 30),
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "Waktu Operasional",
+                                                  ).orelega40s(),
+                                                ],
+                                              ),
+                                              SizedBox(height: 16),
+                                              Container(
+                                                height: 110,
+                                                width: Get.width,
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 30,
+                                                    vertical: 10),
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                16)),
+                                                    color: ONetralWhite,
+                                                    border: Border.all(
+                                                        color: ONetralBlack)),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      "Sekarang Buka",
+                                                    ).nunito30m().greenSmooth(),
+                                                    SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    Text(
+                                                      "${village.openAt} - ${village.closeAt}",
+                                                    ).nunito30m(),
+                                                  ],
                                                 ),
                                               ),
+                                              SizedBox(height: 40),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "Village Profile",
+                                                  ).orelega30s(),
+                                                ],
+                                              ),
                                             ],
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 30),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "location",
-                                        ).orelega30s(),
-                                      ],
-                                    ),
-                                    SizedBox(height: 16),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Desa. Rendut Tutubhada, Nusa Tenggara Timur, Kabupaten/ Kota. Nagekeo, Kecamatan Aesesa",
-                                        ).nunito20s().black(),
-                                      ],
-                                    ),
-                                    SizedBox(height: 20),
-                                    ClipRRect(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(20)),
-                                      child: Container(
-                                        width: Get.width,
-                                        height: 400,
-                                        child: FittedBox(
-                                          child: Image.asset(
-                                              "assets/images/img_lombok_island.png"),
-                                          fit: BoxFit.cover,
+                                        Padding(
+                                          padding: const EdgeInsets.all(40),
+                                          child: Wrap(
+                                            direction: Axis.horizontal,
+                                            spacing: 50.0,
+                                            runSpacing: 50,
+                                            children: [
+                                              Row(
+                                                children: village.villagePhotos
+                                                    .take(4)
+                                                    .expand((photo) => [
+                                                          Expanded(
+                                                            flex: 1,
+                                                            child:
+                                                                CustomRoundedImage(
+                                                              image: 'https://admin-gastronomi.projectbase.site' +
+                                                                  photo
+                                                                      .photoPath,
+                                                              outlineRounded:
+                                                                  10,
+                                                              height: 198,
+                                                              width: Get.width,
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 20,
+                                                          ),
+                                                        ])
+                                                    .toList()
+                                                  ..removeLast(),
+                                              )
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    SizedBox(height: 20),
-                                    OnHoverButton(
-                                      child: BaseButton(
-                                        ontap: () => _launchUrl(
-                                            'https://pub.dev/packages/url_launcher'),
-                                        color: OGoodGreen,
-                                        height: 40,
-                                        width: Get.width,
-                                        text: "Buka Map",
-                                        icon: Icons.arrow_circle_right_rounded,
-                                        iconColor: ONetralWhite,
-                                        outlineRadius: 8,
-                                        textColor: ONetralWhite,
-                                        textSize: 16,
-                                        textWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    SizedBox(height: 40),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Fasilitas",
-                                        ).orelega30s(),
-                                      ],
-                                    ),
-                                    SizedBox(height: 20),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Expanded(
-                                          flex: 1,
-                                          child: Text(
-                                            "Lokasi ini merupakan sebuah areal perkampungan adat yang di dalamnya terdapat rumah adat, batu persembahan dan area/lahan untuk melakukan tradisi adat berupa prosesi tinju adat sebagai luapan rasa syukur atas hasil panen. Perkampungan ditata sedemikian rupa,  dimana areal perkampungan (yang juga dijadikan sebagai arena tinju tradisional) dibuat memanjang berbentuk persegi membujur dari arah utara ke selatan. Areal ini dibatasi dengan pemasangan tumpukan batu-batu sedemikian rupa yang berfungsi sebagai pembatas. Rumah-rumah adat dibangun mengitari areal perkampungan dengan arah hadap ke tengah. Rumah pokok dari perkampungan  ini dibangun di sisi utara menghadap ke pintu masuk perkampungan. Di areal perkampungan terdapat beberapa buah makam, salah satunya makam leluhur yang dianggap sebagai pemersatu kampung, yang dibangun tepat di depan rumah adat pokok.",
-                                            textAlign: TextAlign.justify,
-                                          ).nunito20s().black(),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 40),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Kontak",
-                                        ).orelega30s(),
-                                      ],
-                                    ),
-                                    SizedBox(height: 20),
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Expanded(
-                                          flex: 1,
-                                          child: OnHoverButton(
-                                            child: Container(
-                                              height: 125,
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 30, vertical: 20),
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(20)),
-                                                  border: Border.all(
-                                                      color: ONetralBlack)),
-                                              child: Column(
+                                        // End Layout 1
+
+                                        // Layout 2
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 80.0),
+                                          child: Column(
+                                            children: [
+                                              Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Text(
-                                                        "Kontak",
-                                                      ).nunito30s(),
-                                                      Icon(Icons.add_call)
-                                                    ],
+                                                  Expanded(
+                                                    flex: 1,
+                                                    child: Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          "Description",
+                                                        ).orelega30s(),
+                                                        SizedBox(height: 16),
+                                                        Text(
+                                                          village
+                                                              .mandatoryEquipment,
+                                                          textAlign:
+                                                              TextAlign.justify,
+                                                        ).nunito20s().black(),
+                                                      ],
+                                                    ),
                                                   ),
-                                                  Text(
-                                                    "Hubungi",
-                                                  ).nunito30b(),
+                                                  SizedBox(
+                                                    width: 20,
+                                                  ),
+                                                  Expanded(
+                                                    flex: 1,
+                                                    child: Column(
+                                                      children: [
+                                                        SizedBox(
+                                                          height: 50,
+                                                        ),
+                                                        ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(40),
+                                                          child:
+                                                              YoutubePlayerScaffold(
+                                                            controller:
+                                                                _controller,
+                                                            aspectRatio: 5 / 5,
+                                                            builder: (context,
+                                                                player) {
+                                                              return Column(
+                                                                children: [
+                                                                  player,
+                                                                  // Text('Youtube Player'),
+                                                                ],
+                                                              );
+                                                            },
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
                                                 ],
                                               ),
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 20,
-                                        ),
-                                        Expanded(
-                                          flex: 1,
-                                          child: OnHoverButton(
-                                            child: Container(
-                                              height: 125,
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 30, vertical: 20),
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(20)),
-                                                  border: Border.all(
-                                                      color: ONetralBlack)),
-                                              child: Column(
+                                              SizedBox(height: 30),
+                                              Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "location",
+                                                  ).orelega30s(),
+                                                ],
+                                              ),
+                                              SizedBox(height: 16),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(village.address)
+                                                      .nunito20s()
+                                                      .black(),
+                                                ],
+                                              ),
+                                              SizedBox(height: 20),
+                                              ClipRRect(
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(20)),
+                                                child: Container(
+                                                  width: Get.width,
+                                                  height: 400,
+                                                  child: FittedBox(
+                                                    child: Image.asset(
+                                                        "assets/images/img_lombok_island.png"),
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              OnHoverButton(
+                                                child: BaseButton(
+                                                  ontap: () => _launchUrl(
+                                                      'https://pub.dev/packages/url_launcher'),
+                                                  color: OGoodGreen,
+                                                  height: 40,
+                                                  width: Get.width,
+                                                  text: "Buka Map",
+                                                  icon: Icons
+                                                      .arrow_circle_right_rounded,
+                                                  iconColor: ONetralWhite,
+                                                  outlineRadius: 8,
+                                                  textColor: ONetralWhite,
+                                                  textSize: 16,
+                                                  textWeight: FontWeight.w600,
+                                                ),
+                                              ),
+                                              SizedBox(height: 40),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "Fasilitas",
+                                                  ).orelega30s(),
+                                                ],
+                                              ),
+                                              SizedBox(height: 20),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Expanded(
+                                                    flex: 1,
+                                                    child: Text(
+                                                      village.facility,
+                                                      textAlign:
+                                                          TextAlign.justify,
+                                                    ).nunito20s().black(),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(height: 40),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "Kontak",
+                                                  ).orelega30s(),
+                                                ],
+                                              ),
+                                              SizedBox(height: 20),
+                                              Row(
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: [
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Text(
-                                                        "Kunjungi",
-                                                      ).nunito30s(),
-                                                      Icon(Icons
-                                                          .call_missed_outgoing_outlined)
-                                                    ],
+                                                  Expanded(
+                                                    flex: 1,
+                                                    child: OnHoverButton(
+                                                      child: Container(
+                                                        height: 125,
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 30,
+                                                                vertical: 20),
+                                                        decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            20)),
+                                                            border: Border.all(
+                                                                color:
+                                                                    ONetralBlack)),
+                                                        child: Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Text(
+                                                                  "Kontak",
+                                                                ).nunito30s(),
+                                                                Icon(Icons
+                                                                    .add_call)
+                                                              ],
+                                                            ),
+                                                            Text(
+                                                              "Hubungi",
+                                                            ).nunito30b(),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
                                                   ),
-                                                  Text(
-                                                    "Website",
-                                                  ).nunito30b(),
+                                                  SizedBox(
+                                                    width: 20,
+                                                  ),
+                                                  Expanded(
+                                                    flex: 1,
+                                                    child: OnHoverButton(
+                                                      child: Container(
+                                                        height: 125,
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 30,
+                                                                vertical: 20),
+                                                        decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            20)),
+                                                            border: Border.all(
+                                                                color:
+                                                                    ONetralBlack)),
+                                                        child: Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Text(
+                                                                  "Kunjungi",
+                                                                ).nunito30s(),
+                                                                Icon(Icons
+                                                                    .call_missed_outgoing_outlined)
+                                                              ],
+                                                            ),
+                                                            Text(
+                                                              "Website",
+                                                            ).nunito30b(),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ],
                                               ),
-                                            ),
+                                              SizedBox(height: 20),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "Media Sosial",
+                                                  ).orelega30s(),
+                                                ],
+                                              ),
+                                              SizedBox(height: 20),
+                                              Container(
+                                                height: 40,
+                                                decoration: BoxDecoration(
+                                                    border: Border(
+                                                        bottom: BorderSide(
+                                                            color:
+                                                                Colors.grey))),
+                                                child: Column(
+                                                  children: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons.facebook,
+                                                              size: 35,
+                                                            ),
+                                                            SizedBox(
+                                                              width: 20,
+                                                            ),
+                                                            Text(
+                                                              "Facebook",
+                                                            ).orelega30s(),
+                                                          ],
+                                                        ),
+                                                        Icon(
+                                                          Icons
+                                                              .call_missed_outgoing,
+                                                          size: 35,
+                                                        )
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Container(
+                                                height: 40,
+                                                decoration: BoxDecoration(
+                                                    border: Border(
+                                                        bottom: BorderSide(
+                                                            color:
+                                                                Colors.grey))),
+                                                child: Column(
+                                                  children: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons.facebook,
+                                                              size: 35,
+                                                            ),
+                                                            SizedBox(
+                                                              width: 20,
+                                                            ),
+                                                            Text(
+                                                              "Instagram",
+                                                            ).orelega30s(),
+                                                          ],
+                                                        ),
+                                                        Icon(
+                                                          Icons
+                                                              .call_missed_outgoing,
+                                                          size: 35,
+                                                        )
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Container(
+                                                height: 40,
+                                                decoration: BoxDecoration(
+                                                    border: Border(
+                                                        bottom: BorderSide(
+                                                            color:
+                                                                Colors.grey))),
+                                                child: Column(
+                                                  children: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons.facebook,
+                                                              size: 35,
+                                                            ),
+                                                            SizedBox(
+                                                              width: 20,
+                                                            ),
+                                                            Text(
+                                                              "Twitter",
+                                                            ).orelega30s(),
+                                                          ],
+                                                        ),
+                                                        Icon(
+                                                          Icons
+                                                              .call_missed_outgoing,
+                                                          size: 35,
+                                                        )
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "Mandatory Equipment",
+                                                  ).orelega30s(),
+                                                ],
+                                              ),
+                                              SizedBox(height: 20),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Expanded(
+                                                    flex: 1,
+                                                    child: Text(
+                                                      village
+                                                          .mandatoryEquipment,
+                                                      textAlign:
+                                                          TextAlign.justify,
+                                                    ).nunito20s().black(),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
                                           ),
-                                        ),
+                                        )
                                       ],
-                                    ),
-                                    SizedBox(height: 20),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Media Sosial",
-                                        ).orelega30s(),
-                                      ],
-                                    ),
-                                    SizedBox(height: 20),
-                                    Container(
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                          border: Border(
-                                              bottom: BorderSide(
-                                                  color: Colors.grey))),
-                                      child: Column(
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.facebook,
-                                                    size: 35,
-                                                  ),
-                                                  SizedBox(
-                                                    width: 20,
-                                                  ),
-                                                  Text(
-                                                    "Facebook",
-                                                  ).orelega30s(),
-                                                ],
-                                              ),
-                                              Icon(
-                                                Icons.call_missed_outgoing,
-                                                size: 35,
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                    SizedBox(height: 20),
-                                    Container(
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                          border: Border(
-                                              bottom: BorderSide(
-                                                  color: Colors.grey))),
-                                      child: Column(
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.facebook,
-                                                    size: 35,
-                                                  ),
-                                                  SizedBox(
-                                                    width: 20,
-                                                  ),
-                                                  Text(
-                                                    "Instagram",
-                                                  ).orelega30s(),
-                                                ],
-                                              ),
-                                              Icon(
-                                                Icons.call_missed_outgoing,
-                                                size: 35,
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                    SizedBox(height: 20),
-                                    Container(
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                          border: Border(
-                                              bottom: BorderSide(
-                                                  color: Colors.grey))),
-                                      child: Column(
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.facebook,
-                                                    size: 35,
-                                                  ),
-                                                  SizedBox(
-                                                    width: 20,
-                                                  ),
-                                                  Text(
-                                                    "Twitter",
-                                                  ).orelega30s(),
-                                                ],
-                                              ),
-                                              Icon(
-                                                Icons.call_missed_outgoing,
-                                                size: 35,
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                    SizedBox(height: 20),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Mandatory Equipment",
-                                        ).orelega30s(),
-                                      ],
-                                    ),
-                                    SizedBox(height: 20),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Expanded(
-                                          flex: 1,
-                                          child: Text(
-                                            "This location is a traditional village area in which there are traditional houses, offering stones and areas/land for carrying out traditional traditions in the form of traditional boxing processions as an overflow of gratitude for the harvest. The village is laid out in such a way, where the village area (which is also used as a traditional boxing arena) is made elongated in a rectangular shape from north to south. This area is limited by the installation of piles of stones in such a way that functions as a barrier. Traditional houses are built around the village area facing the center. The main house of this village is built on the north side facing the village entrance. In the village area there are several graves, one of which is the ancestral grave which is considered to unify the village, which was built right in front of the main traditional house.",
-                                            textAlign: TextAlign.justify,
-                                          ).nunito20s().black(),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              )
+                                    );
+                                  } else {
+                                    return Center(
+                                      child: Text('No Data Available'),
+                                    );
+                                  }
+                                },
+                              ),
                             ],
                           ),
                         ),
@@ -736,9 +832,9 @@ Future<void> _launchUrl(dynamic url) async {
 Widget ItemVillage() {
   return OnHoverButton(
     child: GestureDetector(
-      onTap: () {
-        Get.to(DetailTouristVillagePage());
-      },
+      // onTap: () {
+      //   Get.to(DetailTouristVillagePage());
+      // },
       child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(20)),
           child: Stack(

@@ -15,7 +15,9 @@ class TouristBodyListPage extends StatelessWidget {
     return OnHoverButton(
       child: GestureDetector(
         onTap: () {
-          Get.to(DetailTouristVillagePage());
+          Get.to(DetailTouristVillagePage(
+            villagesId: villages.villageId,
+          ));
         },
         child: ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(20)),
