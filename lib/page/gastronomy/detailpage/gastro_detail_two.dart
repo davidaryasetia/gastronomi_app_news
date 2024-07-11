@@ -52,7 +52,9 @@ class GastroDetailTwo extends StatelessWidget {
                           SizedBox(
                             width: 10,
                           ),
-                          const Text("Kepulauan Lombok, Nusa Tenggara Barat").nunito18s().black(),
+                          const Text("Kepulauan Lombok, Nusa Tenggara Barat")
+                              .nunito18s()
+                              .black(),
                         ],
                       ),
                     ],
@@ -85,7 +87,8 @@ class GastroDetailTwo extends StatelessWidget {
             Expanded(
                 flex: 1,
                 child: CustomRoundedImage(
-                  image: "http://gapulo.tech${l.foods[index].culturePictures[0].picture}",
+                  image:
+                      "http://gapulo.tech${l.foods[index].culturePictures[0].picture}",
                   outlineRounded: 10,
                   height: 198,
                   width: Get.width,
@@ -94,7 +97,8 @@ class GastroDetailTwo extends StatelessWidget {
             Expanded(
                 flex: 1,
                 child: CustomRoundedImage(
-                  image: "http://gapulo.tech${l.foods[index].culturePictures[0].picture}",
+                  image:
+                      "http://gapulo.tech${l.foods[index].culturePictures[0].picture}",
                   outlineRounded: 10,
                   height: 198,
                   width: Get.width,
@@ -103,7 +107,8 @@ class GastroDetailTwo extends StatelessWidget {
             Expanded(
                 flex: 1,
                 child: CustomRoundedImage(
-                  image: "http://gapulo.tech${l.foods[index].culturePictures[0].picture}",
+                  image:
+                      "http://gapulo.tech${l.foods[index].culturePictures[0].picture}",
                   outlineRounded: 10,
                   height: 198,
                   width: Get.width,
@@ -112,7 +117,8 @@ class GastroDetailTwo extends StatelessWidget {
             Expanded(
                 flex: 1,
                 child: CustomRoundedImage(
-                  image: "http://gapulo.tech${l.foods[index].culturePictures[0].picture}",
+                  image:
+                      "http://gapulo.tech${l.foods[index].culturePictures[0].picture}",
                   outlineRounded: 10,
                   height: 198,
                   width: Get.width,
