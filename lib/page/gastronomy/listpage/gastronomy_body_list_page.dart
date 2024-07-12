@@ -18,9 +18,9 @@ class GastronomyBodyListPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 80),
           child: GestureDetector(
             onTap: () {
-              // Get.to(const GastronomyDetailPage(
-              //   index: widget.index,
-              // ));
+              Get.to(GastronomyDetailPage(
+                foodId: food.foodId,
+              ));
             },
             child: OnHoverButton(
               child: Column(

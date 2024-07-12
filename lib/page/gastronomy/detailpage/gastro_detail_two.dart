@@ -5,7 +5,9 @@ import 'package:gastronomy/widget/custom/custom_rounded_image.dart';
 import 'package:get/get.dart';
 
 class GastroDetailTwo extends StatelessWidget {
-  GastroDetailTwo({super.key, required this.index});
+  final int foodId;
+
+  GastroDetailTwo({super.key, required this.index, required this.foodId});
   final int index;
   var l = Get.put(GastronomyListPageController());
 
