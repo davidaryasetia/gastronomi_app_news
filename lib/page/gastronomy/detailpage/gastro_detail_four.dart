@@ -5,7 +5,24 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class GastroDetailFour extends StatelessWidget {
   GastroDetailFour({super.key});
-  final List<String> recipes = <String>['750 gram ayam kampung', '1,5 liter air', '1 buah jeruk nipis', '1 sdt gula pasir', '1 sdt gula pasir', '750 gram ayam kampung', '1 buah jeruk nipis', 'garam secukupnya', '1 sdt gula pasir', '1 buah jeruk nipis', '1 buah jeruk nipis', '1 sdt gula pasir', '1 buah jeruk nipis', '1,5 liter air', '750 gram ayam kampung', 'garam secukupnya'];
+  final List<String> recipes = <String>[
+    '750 gram ayam kampung',
+    '1,5 liter air',
+    '1 buah jeruk nipis',
+    '1 sdt gula pasir',
+    '1 sdt gula pasir',
+    '750 gram ayam kampung',
+    '1 buah jeruk nipis',
+    'garam secukupnya',
+    '1 sdt gula pasir',
+    '1 buah jeruk nipis',
+    '1 buah jeruk nipis',
+    '1 sdt gula pasir',
+    '1 buah jeruk nipis',
+    '1,5 liter air',
+    '750 gram ayam kampung',
+    'garam secukupnya'
+  ];
   final _controller = YoutubePlayerController.fromVideoId(
     videoId: 'Bj2kAAKt_cE',
     autoPlay: false,
