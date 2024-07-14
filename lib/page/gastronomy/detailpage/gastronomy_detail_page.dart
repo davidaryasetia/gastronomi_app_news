@@ -474,7 +474,7 @@ class _GastronomyDetailPageState extends State<GastronomyDetailPage> {
                                                                 .symmetric(
                                                                 vertical: 4.0),
                                                         child: Text(
-                                                          ingredient,
+                                                          '- ${ingredient}',
                                                           style: GoogleFonts
                                                               .nunito(
                                                                   fontSize: 20),
@@ -540,13 +540,13 @@ class _GastronomyDetailPageState extends State<GastronomyDetailPage> {
                                                   height: 500,
                                                   child: ListView.builder(
                                                     itemCount: parseHtmlList(
-                                                            food.ingredients)
+                                                            food.directions)
                                                         .length,
                                                     itemBuilder:
                                                         (context, index) {
-                                                      final ingredient =
+                                                      final directions =
                                                           parseHtmlList(food
-                                                                  .ingredients)[
+                                                                  .directions)[
                                                               index];
                                                       return Padding(
                                                         padding:
@@ -554,7 +554,7 @@ class _GastronomyDetailPageState extends State<GastronomyDetailPage> {
                                                                 .symmetric(
                                                                 vertical: 4.0),
                                                         child: Text(
-                                                          '${index + 1}. $ingredient',
+                                                          '${index + 1}. $directions',
                                                           style: GoogleFonts
                                                               .nunito(
                                                                   fontSize: 20),
@@ -640,7 +640,7 @@ class _GastronomyDetailPageState extends State<GastronomyDetailPage> {
                                           Expanded(
                                               flex: 2,
                                               child: Text(
-                                                'Kandungan gizi "Ayam taliwang, masakan" di bawah ini berdasarkan data Kemenkes RI, Tabel Komposisi Pangan Indonesia (TKPI). Jenis pangan: Olahan, Kode Baru: FP034       Kode Lama: -, Kelompok: Daging, Nama Inggris: Taliwang chicken, cooking. Komposisi (kandungan) gizi per 100 gram "ayam taliwang, masakan", dengan BDD = 100 % (Berat Dapat Dimakan), seperti berikut ini (urut abjad/huruf). Silakan klik gizi/vitamin/mineral yang berwarna biru untuk melihat manfaatnya serta bahan makanan yang mengandung gizi tersebut. Abu (Ash):1,5 gramAir (Water):57,5 gram, Besi (Fe), Ferrum, Iron:2,0 miligram, β-Karoten (Carotenes):-, Energi (Energy):264 Kalori, Fosfor (P), Phosphorus:164 miligram, Kalium (K), Potassium:408,0 miligram, Kalsium (Ca), Calcium:94 miligram, Karbohidrat (CHO):2,7 gram, Karoten total (Re):-, Lemak (Fat):20,1 gram, Natrium (Na), Sodium:507 miligram, Niasin, C6H5NO2, Niacin:-. Protein:18,2 gram, Retinol (vit A), C20H30O:1.067 mikrogram, Riboflavin (vitamin B2):-, Seng (Zn), Zinc:12,3 miligram, Serat (Fiber):-, Tembaga (Cu), Copper:0,40 miligram, Tiamina (vitamin B1):-, Vitamin C:-',
+                                                food.nutrition,
                                                 textAlign: TextAlign.justify,
                                               ).nunito20s())
                                         ],
