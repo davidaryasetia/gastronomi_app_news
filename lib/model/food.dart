@@ -56,6 +56,7 @@ class Food {
     required this.foodHistorical,
     required this.ingredients,
     required this.urlYoutube,
+    required this.directions,
     required this.nutrition,
     required this.address,
     required this.createdAt,
@@ -71,6 +72,7 @@ class Food {
   String foodHistorical;
   String ingredients;
   String urlYoutube;
+  String directions;
   String nutrition;
   String address;
   DateTime createdAt;
@@ -93,6 +95,7 @@ class Food {
         foodHistorical: json["food_historical"],
         ingredients: json["ingredients"],
         urlYoutube: json["url_youtube"],
+        directions: json["directions"],
         nutrition: json["nutrition"],
         address: json["address"],
         createdAt: DateTime.parse(json["created_at"]),
@@ -111,6 +114,7 @@ class Food {
         "food_historical": foodHistorical,
         "ingredients": ingredients,
         "url_youtube": urlYoutube,
+        "directions": directions,
         "nutrition": nutrition,
         "address": address,
         "created_at": createdAt.toIso8601String(),
