@@ -15,8 +15,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../utils/colors.dart';
 
 class CultureBodyTwo extends StatelessWidget {
+  final Future<CultureData> futureCultures;
+
   const CultureBodyTwo({
     Key? key,
+    required this.futureCultures,
   }) : super(key: key);
 
   @override
@@ -45,8 +48,57 @@ class CultureBodyTwo extends StatelessWidget {
           height: 40,
         ),
 
+        Padding(
+          padding: const EdgeInsets.all(80),
+          child: Wrap(
+            direction: Axis.horizontal,
+            spacing: 50.0,
+            runSpacing: 50,
+            children: [
+              Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: Get.width / 1536 * 150),
+                child: FutureBuilder<CultureData>(
+                  future: futureCultures,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      List<Culture> cultures = snapshot.data!.data;
+                      return SizedBox(
+                        height: 200,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: cultures.length,
+                          itemBuilder: (context, index) {
+                            return Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CultureBodyTwoCard(
+                                  cultures: cultures[index],
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text("${snapshot.error}");
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+
         // Perbaikan Disini
-        CultureBodyTwoCard(),
+        // CultureBodyTwoCard(),
         // Perbaikan Disini
 
         const SizedBox(

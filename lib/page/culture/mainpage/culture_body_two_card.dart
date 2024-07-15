@@ -4,9 +4,9 @@ import 'package:gastronomy/utils/colors.dart';
 import 'package:gastronomy/utils/ext_text.dart';
 
 class CultureBodyTwoCard extends StatelessWidget {
-  // final Culture culture;
+  final Culture cultures;
 
-  const CultureBodyTwoCard({super.key});
+  const CultureBodyTwoCard({super.key, required this.cultures});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,8 @@ class CultureBodyTwoCard extends StatelessWidget {
           width: 327.33,
           child: FittedBox(
             fit: BoxFit.cover,
-            child: Image.asset("assets/images/ic_beleq.png"),
+            child: Image.network('https://admin-gastronomi.projectbase.site' +
+                cultures.photoPath),
           ),
         ),
         Container(
@@ -34,7 +35,7 @@ class CultureBodyTwoCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text("Gendang Beleq").nunito20b().white(),
+                  Text(cultures.nameCulture).nunito20b().white(),
                   const SizedBox(
                     width: 5,
                   ),
