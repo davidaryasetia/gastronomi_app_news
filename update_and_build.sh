@@ -2,7 +2,6 @@
 rm -rf ./build/web/*
 rm -rf ./building_application/*
 
-mkdir building_application
 
 # Compile flutter to build 
 flutter build web --web-renderer html
