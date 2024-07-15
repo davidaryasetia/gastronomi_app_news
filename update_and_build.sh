@@ -5,7 +5,7 @@ rm -rf ./building_application/*
 mkdir building_application
 
 # Compile flutter to build 
-flutter build web --web-renderer canvaskit
+flutter build web --web-renderer html
 
 # Copy Project to public html
 cp -r ./build/web/* ./building_application
