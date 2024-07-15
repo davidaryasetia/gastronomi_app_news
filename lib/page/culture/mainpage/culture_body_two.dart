@@ -44,55 +44,11 @@ class CultureBodyTwo extends StatelessWidget {
         const SizedBox(
           height: 40,
         ),
+
+        // Perbaikan Disini
         CultureBodyTwoCard(),
-        // Belum Fix
-        // Padding(
-        //   padding: EdgeInsets.symmetric(horizontal: 100),
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     crossAxisAlignment: CrossAxisAlignment.center,
-        //     children: [
-        //       FutureBuilder<CultureData>(
-        //         future: ApiService.fetchCultures(),
-        //         builder: (context, snapshot) {
-        //           if (snapshot.connectionState == ConnectionState.waiting) {
-        //             return Center(
-        //               child: CircularProgressIndicator(),
-        //             );
-        //           } else if (snapshot.hasError) {
-        //             return Center(
-        //               child: Text('Error: ${snapshot.error}'),
-        //             );
-        //           } else if (snapshot.hasData &&
-        //               snapshot.data!.data.isNotEmpty) {
-        //             final cultures = snapshot.data!.data;
-        //             return ListView.builder(
-        //               scrollDirection: Axis.horizontal,
-        //               shrinkWrap: true,
-        //               physics: const NeverScrollableScrollPhysics(),
-        //               itemCount: cultures.length,
-        //               itemBuilder: (context, index) {
-        //                 return CultureBodyTwoCard(culture: cultures[index]);
-        //               },
-        //             );
-        //           } else {
-        //             return Center(
-        //               child: Text('No Data Available'),
-        //             );
-        //           }
-        //         },
-        //       ),
+        // Perbaikan Disini
 
-        //       // Staart Here
-
-        //       // End Here
-        //       SizedBox(
-        //         width: 50,
-        //       ),
-        //     ],
-        //   ),
-        // ),
-        // Belum Fix
         const SizedBox(
           height: 40,
         ),
