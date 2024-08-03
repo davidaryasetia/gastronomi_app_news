@@ -76,17 +76,15 @@ class ApiService {
 
   static Future<FoodData> fetchFoodsById(int id) async {
     final response = await http.get(Uri.parse('$baseUrl/food/$id'), headers: {
-      'Accept' : 'application/json',
+      'Accept': 'application/json',
     });
 
-    if (response.statusCode == 200){
+    if (response.statusCode == 200) {
       return FoodData.fromJson(response.body);
     } else {
       throw Exception('Failed to load food Data');
     }
   }
-
-  
 
   // Tourist Village Destination
   static Future<VillageData> fetchVillages() async {
