@@ -23,7 +23,12 @@ class _RestoBodyThreeState extends State<RestoBodyThree> {
     int currentIndex = 0;
 
     // List<String> resto = ['assets/images/brochure1.png', 'assets/images/brochure2.png', 'assets/images/brochure3.png'];
-    List<String> resto = ['assets/images/img_resto1.jpg', 'assets/images/img_resto2.jpg', 'assets/images/img_resto3.jpg', 'assets/images/img_resto4.jpg'];
+    List<String> resto = [
+      'assets/images/img_resto1.jpg',
+      'assets/images/img_resto2.jpg',
+      'assets/images/img_resto3.jpg',
+      'assets/images/img_resto4.jpg'
+    ];
 
     return Column(
       children: [
@@ -53,7 +58,9 @@ class _RestoBodyThreeState extends State<RestoBodyThree> {
                 // onPageChanged: callbackFunction,
                 scrollDirection: Axis.horizontal,
               ),
-              itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) => SizedBox(
+              itemBuilder:
+                  (BuildContext context, int itemIndex, int pageViewIndex) =>
+                      SizedBox(
                 child: Column(
                   children: [
                     SizedBox(
@@ -64,7 +71,11 @@ class _RestoBodyThreeState extends State<RestoBodyThree> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: const [
-                          BoxShadow(color: Color(0x54000000), spreadRadius: 1, blurRadius: 5, offset: Offset(0.0, 1.0)),
+                          BoxShadow(
+                              color: Color(0x54000000),
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset: Offset(0.0, 1.0)),
                         ],
                       ),
                       child: ClipRRect(
@@ -87,23 +98,29 @@ class _RestoBodyThreeState extends State<RestoBodyThree> {
             height: 705,
             child: Padding(
               padding: const EdgeInsets.only(left: 50.0),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
-                OnHoverButton(
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.all(Radius.circular(1000))),
-                    child: IconButton(
-                      color: Colors.white,
-                      onPressed: () {
-                        // Use the controller to change the current page
-                        carouselController.previousPage();
-                      },
-                      icon: Icon(Icons.arrow_back),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    OnHoverButton(
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(1000))),
+                        child: IconButton(
+                          color: Colors.white,
+                          onPressed: () {
+                            // Use the controller to change the current page
+                            carouselController.previousPage();
+                          },
+                          icon: Icon(Icons.arrow_back),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              ]),
+                  ]),
             ),
           ),
           SizedBox(
@@ -122,7 +139,10 @@ class _RestoBodyThreeState extends State<RestoBodyThree> {
                         child: Container(
                           width: 100,
                           height: 100,
-                          decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.all(Radius.circular(1000))),
+                          decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(1000))),
                           child: IconButton(
                             color: Colors.white,
                             onPressed: () {
@@ -151,7 +171,9 @@ class _RestoBodyThreeState extends State<RestoBodyThree> {
     return Container(
       height: isSelected ? 100 : 80,
       width: isSelected ? 100 : 80,
-      decoration: BoxDecoration(shape: BoxShape.circle, color: isSelected ? Colors.black : Colors.grey),
+      decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: isSelected ? Colors.black : Colors.grey),
     );
   }
 }
