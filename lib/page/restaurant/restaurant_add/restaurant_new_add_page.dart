@@ -6,14 +6,14 @@ import 'package:gastronomy/widget/custom/custom_appbar.dart';
 import 'package:gastronomy/widget/custom/custom_footbar.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+// add section
 class RestaurantNewAddPage extends StatefulWidget {
   const RestaurantNewAddPage({super.key});
 
   @override
   State<RestaurantNewAddPage> createState() => _RestaurantNewAddPageState();
 }
-
+// add section
 class _RestaurantNewAddPageState extends State<RestaurantNewAddPage> {
   var gstate = Get.put(GlobalController());
   @override
