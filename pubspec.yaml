@@ -62,7 +62,7 @@ dev_dependencies:
   youtube_player_iframe: ^4.0.4
   flutter_inappwebview: ^5.7.2+3
   url_launcher: ^6.1.10
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
   flutter_animate: ^2.0.1
   dialog_flowtter: ^0.3.3
   flutter_rating_bar: ^4.0.1

@@ -29,7 +29,7 @@ class _RestaurantBodyState extends State<RestaurantBody> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const [RestoBodyOne(), Divider(), RestoBodyTwo(), Divider(), RestoBodyThree(), Divider(), FootBar()],
+      children: const [RestoBodyOne(), Divider(), RestoBodyTwo(), Divider(), /*RestoBodyThree(), */  Divider(), FootBar()],
     );
   }
 }
